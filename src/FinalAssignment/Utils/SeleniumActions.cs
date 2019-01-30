@@ -34,7 +34,7 @@ namespace FinalAssignment.Utils
             if (isCollection)
             {
                 Wait.Until<IWebElement>((d) => {
-                    Log.Debug($"Searching a collection of elements by locator {locator}");
+                    SetLogs($"Searching a collection of elements by locator {locator}");                    
                     return d.FindElements(ProcessLocator(locator)).First();
                 });
 
@@ -42,7 +42,7 @@ namespace FinalAssignment.Utils
             else
             {
                 Wait.Until<IWebElement>((d) => {
-                    Log.Debug($"Searching for a single element by locator {locator}");
+                    SetLogs($"Searching for a single element by locator {locator})");                    
                     return d.FindElement(ProcessLocator(locator));
                 });
             }
@@ -57,7 +57,7 @@ namespace FinalAssignment.Utils
 
             By byLocator = ProcessLocator(locator);
 
-            Log.Information($"Waiting for an element by the following locator: {locator}");
+            SetLogs($"Waiting for an element by the following locator: {locator}");
 
             IWebElement element = wait.Until((d) =>
             {
@@ -67,12 +67,12 @@ namespace FinalAssignment.Utils
                     return null;
             });
 
-            Log.Information($"Element by the following locator: {locator} has been found. Proceeding...");
+            SetLogs($"Element by the following locator: {locator} has been found. Proceeding...");
         }
 
         private void SetDefaultWaitFor(int duration)
         {
-            Log.Information($"Setting default time to wait for an element to {duration}");
+            SetLogs($"Setting default time to wait for an element to {duration}");            
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(duration);
         }
 
@@ -127,21 +127,21 @@ namespace FinalAssignment.Utils
         public void Click(string locator, int index)
         {
             WaitFor(locator, true);
-            Log.Information($"Clicking on the element by its locator: { locator } and index in the collection of similar elements {index}");
+            SetLogs($"Clicking on the element by its locator: { locator } and index in the collection of similar elements {index}");            
             _driver.FindElements(ProcessLocator(locator)).ElementAt(index).Click();
         }
 
         public void Click(string locator)
         {
             WaitFor(locator);
-            Log.Information($"Clicking on the element by its locator: {locator}");
+            SetLogs($"Clicking on the element by its locator: {locator}");            
             _driver.FindElement(ProcessLocator(locator)).Click();
         }
 
         public IWebElement SetText(string locator, string text)
         {
             WaitFor(locator);
-            Log.Information($"Setting the text in the element by its locator: {locator}");
+            SetLogs($"Setting the text in the element by its locator: {locator}");
             var element = _driver.FindElement(ProcessLocator(locator));
             element.SendKeys(text);
 
@@ -151,7 +151,7 @@ namespace FinalAssignment.Utils
         public void ClearText(string locator, int index)
         {
             WaitFor(locator, true);
-            Log.Information($"Clearing the text in the element by its locator: {locator}");
+            SetLogs($"Clearing the text in the element by its locator: {locator}");
             _driver.FindElements(ProcessLocator(locator)).ElementAt(index).Clear();
         }
 
@@ -162,12 +162,12 @@ namespace FinalAssignment.Utils
 
             if (element.Enabled)
             {
-                Log.Information($"Element by the following locator: {locator} is enabled");
+                SetLogs($"Element by the following locator: {locator} is enabled");
                 return true;
             }
             else
             {
-                Console.Out.WriteLine($"Element by the following locator: {locator} is disabled");
+                SetLogs($"Element by the following locator: {locator} is disabled");
                 return false;
             }
         }
@@ -179,12 +179,12 @@ namespace FinalAssignment.Utils
 
             if (element.Selected)
             {
-                Log.Information($"Element by the following locator: {locator} is selected");
+                SetLogs($"Element by the following locator: {locator} is selected");
                 return true;
             }
             else
             {
-                Log.Information($"Element by the following locator: {locator} is NOT selected");
+                SetLogs($"Element by the following locator: {locator} is NOT selected");
                 return false;
             }
         }
@@ -196,12 +196,12 @@ namespace FinalAssignment.Utils
 
             if (element.Selected)
             {
-                Log.Information($"Element by the following locator: {locator} is selected");
+                SetLogs($"Element by the following locator: {locator} is selected");
                 return true;
             }
             else
             {
-                Log.Information($"Element by the following locator: {locator} is NOT selected");
+                SetLogs($"Element by the following locator: {locator} is NOT selected");
                 return false;
             }
         }
@@ -209,16 +209,16 @@ namespace FinalAssignment.Utils
         public void GetCssValue(string locator, string cssAttribute)
         {
             WaitFor(locator);
-            Log.Information($"Getting CSS value from the element by its locator: {locator}");
+            SetLogs($"Getting CSS value from the element by its locator: {locator}");
             var cssValue = _driver.FindElement(ProcessLocator(locator)).GetCssValue(cssAttribute);
-            Log.Information($"The CSS value of the element by locator: {locator} is: {cssValue}");
+            SetLogs($"The CSS value of the element by locator: {locator} is: {cssValue}");
         }
 
         public string GetText(string locator, int index)
         {
             WaitFor(locator);
             var text = _driver.FindElements(ProcessLocator(locator)).ElementAt(index).Text;
-            Log.Information($"Getting text from the collection of elements by its locator: {locator} and position in the collection {index}. Text value is {text}");
+            SetLogs($"Getting text from the collection of elements by its locator: {locator} and position in the collection {index}. Text value is {text}");
             return text;
 
         }
@@ -227,7 +227,7 @@ namespace FinalAssignment.Utils
         {
             WaitFor(locator);
             var text = _driver.FindElement(ProcessLocator(locator)).Text;
-            Log.Information($"Getting text from the element by its locator: {locator}. Text value is {text}");
+            SetLogs($"Getting text from the element by its locator: {locator}. Text value is {text}");
             return text;
 
         }
@@ -249,7 +249,7 @@ namespace FinalAssignment.Utils
             WaitFor(locator);
             var value = _driver.FindElements(ProcessLocator(locator)).ElementAt(index).GetAttribute(attribute);
 
-            Log.Information($"Getting attribute {attribute} from the element {locator} in the {index} position in the collection. The value of the requested attribute is {value}");
+            SetLogs($"Getting attribute {attribute} from the element {locator} in the {index} position in the collection. The value of the requested attribute is {value}");
 
             return value;
 
@@ -260,7 +260,7 @@ namespace FinalAssignment.Utils
             WaitFor(locator);
 
             var value = _driver.FindElement(ProcessLocator(locator)).GetAttribute(attribute);
-            Log.Information($"Getting attribute {attribute} from the element {locator}. The value of the requested attribute is {value}");
+            SetLogs($"Getting attribute {attribute} from the element {locator}. The value of the requested attribute is {value}");
 
             return value;
 
@@ -283,7 +283,7 @@ namespace FinalAssignment.Utils
 
             selectElement.SelectByIndex(index);
 
-            Log.Information($"Dropdown element was selected by index: {index}");
+            SetLogs($"Dropdown element was selected by index: {index}");
         }
 
         public void SubmitForm(string locator)
@@ -291,25 +291,26 @@ namespace FinalAssignment.Utils
             WaitFor(locator);
 
             var element = _driver.FindElement(ProcessLocator(locator));
+            SetLogs($"Submitting the form that contains the following element: {locator}");
 
             element.Submit();
         }
 
         public void ToPreviousPage()
         {
-            Log.Information("Navigating back to the previous page");
+            SetLogs("Navigating back to the previous page");
             _driver.Navigate().Back();
         }
 
         public void RefreshPage()
         {
-            Log.Information("refreshing the page");
+            SetLogs("Refreshing the page");
             _driver.Navigate().Refresh();
         }
 
         public void GoToPage(string pageUrl)
         {
-            Log.Information($"Navigating to the page by the following url: {pageUrl}");
+            SetLogs($"Navigating to the page by the following url: {pageUrl}");
             _driver.Navigate().GoToUrl(pageUrl);
         }
 
@@ -317,79 +318,82 @@ namespace FinalAssignment.Utils
         {
             WaitFor(locator);
             var element = _driver.FindElement(ProcessLocator(locator)).Text;
-            Log.Information($"Checking if the text {element} of the element {locator} is equal to expected one: {expectedValue}");
+            SetLogs($"Checking if the text {element} of the element {locator} is equal to expected one: {expectedValue}");
             element.Should().Contain(expectedValue);
         }
 
         public string GetCurrentUrl()
         {
             var thisUrl = _driver.Url;
-            Log.Information($"Getting current URL. It is {thisUrl}");
+            SetLogs($"Getting current URL. It is {thisUrl}");
             return thisUrl;
         }
 
 
         public void PressControlKey()
         {
-            Log.Information($"Pressing 'Control' key.");
+            SetLogs($"Pressing 'Control' key.");
             new Actions(_driver).KeyDown(Keys.Control).Perform();
         }
 
         public void ReleaseControlKey()
         {
-            Log.Information($"Releasing 'Control' key.");
+            SetLogs($"Releasing 'Control' key.");
             new Actions(_driver).KeyUp(Keys.Control).Perform();
         }
 
         public void Hover(string locator)
         {
-            Log.Information($"Moving and hovering over the element by its locator {locator}");
+            SetLogs($"Moving and hovering over the element by its locator {locator}");
             new Actions(_driver).MoveToElement(_driver.FindElement(ProcessLocator(locator))).Perform();
         }
 
-        public void TakeScreenshot()
+        public string TakeScreenshot()
         {
             Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
 
-            var currentDirectory = $@"{Constants.CurrentDirectory}\TestResults";
-            var screenshotPath = Path.Combine(currentDirectory, Constants.Directory, "screenshot.png");
+            var currentDirectory = $@"{Constants.CurrentDirectory}\FinalAssignment\Reports";
+            var screenshotPath = Path.Combine(currentDirectory, Constants.Directory, $"screenshot_{DateTime.Now:HH_ mm_ ss}.png");
 
-            Log.Information($"Taking screenshot and saving it to {screenshotPath}");
+            Log.Debug($"Taking screenshot and saving it to {screenshotPath}");
 
             screenshot.SaveAsFile(screenshotPath);
 
             TestContext.AddTestAttachment(screenshotPath);
+
+            return screenshotPath;
         }
 
         public void SwitchToWindow(int windowIndex)
         {
-            Log.Information($"Switching to window/tab by its index: {windowIndex}");
+            SetLogs($"Switching to window/tab by its index: {windowIndex}");
             _driver.SwitchTo().Window(_driver.WindowHandles[windowIndex]);
         }
 
         public void SwitchToDefaultContent()
         {
-            Log.Information("Switching to default window...");
+            SetLogs("Switching to default window...");
             _driver.SwitchTo().DefaultContent();
         }
 
         public void CloseCurrentWindow()
         {
-            Log.Information("Closing current window...");
+            SetLogs("Closing current window...");
             _driver.Close();
         }
 
         public void SwitchToFrame(string locator)
         {
-            Log.Information($"Switching to frame by its locator: {locator}");
+            SetLogs($"Switching to frame by its locator: {locator}");
             _driver.SwitchTo().Frame(_driver.FindElement(ProcessLocator(locator)));
         }
 
         public void DragAndDrop(string draggableElement, string targetElement)
         {
-            Log.Information($"Dragging element by locator: {draggableElement} to its target element by locator: {targetElement}");
+            SetLogs($"Dragging element by locator: {draggableElement} to its target element by locator: {targetElement}");
             new Actions(_driver).DragAndDrop(_driver.FindElement(ProcessLocator(draggableElement)), _driver.FindElement(ProcessLocator(targetElement))).Perform();
         }
+
 
         public void FluentScroll(string locator)
         {
@@ -418,6 +422,12 @@ namespace FinalAssignment.Utils
             }
 
             jsExecutor.ExecuteScript("arguments[0].scrollIntoView()", elementFound);
+        }
+
+        private void SetLogs(string message)
+        {
+            Log.Information(message);
+            Reporter.Log(message);
         }
     }
 }

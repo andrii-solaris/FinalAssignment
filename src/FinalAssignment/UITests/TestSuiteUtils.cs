@@ -12,19 +12,20 @@ using Serilog.Events;
 using Serilog.Enrichers;
 
 namespace FinalAssignment.Tests
-{
+{    
 
     [SetUpFixture]
     class TestSuiteUtils
-    {       
+    {        
 
         [OneTimeSetUp]
         public void RunBeforeTestSuite()
 
         {            
-            var currentDirectory = $@"{Constants.CurrentDirectory}\TestResults";
+            var currentDirectory = $@"{Constants.CurrentDirectory}\FinalAssignment\Reports";
             var logFilePath = Path.Combine(currentDirectory, Constants.Directory, "logs.txt");
             var detailedLogFilePath = Path.Combine(currentDirectory, Constants.Directory, "detailedLogs.txt");
+            var htmlReportFilePath = Path.Combine(currentDirectory, Constants.Directory, "extentreport.html");
             var template = "[{Timestamp:HH:mm:ss} {Level:u3}] [{ProcessId}] {Message:lj}{NewLine}{Exception}";
 
             Log.Logger = new LoggerConfiguration().
@@ -36,6 +37,8 @@ namespace FinalAssignment.Tests
                 CreateLogger();
 
             Log.Debug($"Logger instance created with three sinks. Output files will be placed to {currentDirectory} in {Constants.Directory} folder");
+
+            Reporter.InitializeReporter(htmlReportFilePath);
 
             if (TestContext.Parameters["DriverType"] != null)
             {
@@ -49,6 +52,7 @@ namespace FinalAssignment.Tests
         [OneTimeTearDown]
         public void RunAfterTestSuite()
         {
+            Reporter.TerminateReporter();
             Log.Debug("Preparing to close logger instance...");
             Log.CloseAndFlush();
             DriverFactory.CloseAllDrivers();

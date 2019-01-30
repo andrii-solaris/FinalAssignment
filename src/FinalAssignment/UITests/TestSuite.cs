@@ -21,6 +21,7 @@ namespace FinalAssignment.Tests
         [SetUp]
         public void SetUp()
         {
+            Reporter.WriteTestName(TestContext.CurrentContext.Test.MethodName);
             base.GoToPage("https://atata-framework.github.io/atata-sample-app/#!/");
             new AtataIndexPage().ClickSignInButton();
             new AtataSignInPage().SubmitSignInForm();
@@ -76,7 +77,7 @@ namespace FinalAssignment.Tests
 
         [Test]
         [Order(4)]
-        [Timeout(5000)]
+        [Timeout(5000)]       
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
         [Description("Navigates to 'Products' tab. This test fails.")]
         public void ValidatePricesProductsTab()
@@ -90,20 +91,32 @@ namespace FinalAssignment.Tests
         [TearDown]
         public void TearDown()
         {
+            var message = "";
+
+            _samplePage.Logout();
 
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
                 var stackTrace = TestContext.CurrentContext.Result.StackTrace;
                 var errorMessage = TestContext.CurrentContext.Result.Message;
-                Log.Debug($"Test failed! Stack trace of an error is {stackTrace}{errorMessage}");
+                message = $"Test failed! Stack trace of an error is {stackTrace}{errorMessage}";
+                Log.Debug(message);
+                Reporter.LogFail(message, base.TakeScreenshot());
 
             }
             else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
             {
-                Log.Debug("Test passed!");
+                message = "Test passed!";
+                Log.Debug(message);
+                Reporter.Log(message);                
             }
 
-            _samplePage.Logout();
+            else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Skipped)
+            {
+                message = "Test skipped!";
+                Log.Debug(message);
+                Reporter.Log(message);
+            }                
         }
     }
 }
