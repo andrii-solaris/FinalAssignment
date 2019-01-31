@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FinalAssignment.Utils;
+﻿using FinalAssignment.Utils;
 using NUnit.Framework;
-using System.Configuration;
 using System.IO;
 using Serilog;
 using Serilog.Events;
@@ -38,15 +32,7 @@ namespace FinalAssignment.Tests
 
             Log.Debug($"Logger instance created with three sinks. Output files will be placed to {currentDirectory} in {Constants.Directory} folder");
 
-            Reporter.InitializeReporter(htmlReportFilePath);
-
-            if (TestContext.Parameters["DriverType"] != null)
-            {
-                DriverFactory.InstantiateDriver(TestContext.Parameters["DriverType"]);
-            } else
-            {
-                DriverFactory.InstantiateDriver(ConfigurationManager.AppSettings["DriverType"]);
-            }            
+            Reporter.InitializeReporter(htmlReportFilePath);               
         }
 
         [OneTimeTearDown]
@@ -54,8 +40,7 @@ namespace FinalAssignment.Tests
         {
             Reporter.TerminateReporter();
             Log.Debug("Preparing to close logger instance...");
-            Log.CloseAndFlush();
-            DriverFactory.CloseAllDrivers();
+            Log.CloseAndFlush();            
         }
         
     }

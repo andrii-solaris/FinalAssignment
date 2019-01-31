@@ -3,8 +3,10 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 
 namespace FinalAssignment.Utils
 {
@@ -87,6 +89,27 @@ namespace FinalAssignment.Utils
             Log.Information($"Initializing {driverType} driver...");
         }
 
+        public static string TakeScreenshot()
+        {
+            Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+
+            var currentDirectory = $@"{Constants.CurrentDirectory}\FinalAssignment\Reports";
+            var screenshotPath = Path.Combine(currentDirectory, Constants.Directory, $"screenshot_{DateTime.Now:HH_ mm_ ss}.png");
+
+            Log.Debug($"Taking screenshot and saving it to {screenshotPath}");
+
+            screenshot.SaveAsFile(screenshotPath);
+
+            TestContext.AddTestAttachment(screenshotPath);
+
+            return screenshotPath;
+        }
+
+        public static void GoToPage(string pageUrl)
+        {
+            Reporter.SetLogs($"Navigating to the page by the following url: {pageUrl}");
+            _driver.Navigate().GoToUrl(pageUrl);
+        }
 
 
         public static void CloseAllDrivers()

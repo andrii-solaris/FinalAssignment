@@ -1,7 +1,7 @@
-﻿using System;
-using AventStack.ExtentReports;
+﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports.MarkupUtils;
+using System;
 
 namespace FinalAssignment.Utils
 {  
@@ -36,18 +36,29 @@ namespace FinalAssignment.Utils
         }
 
         public static void Log(string log)
-        {
-            Test.Log(Status.Pass, MarkupHelper.CreateLabel(log,ExtentColor.Green));
+        {            
+                Test.Log(Status.Pass, log);         
         }        
 
         public static void LogFail(string log, string screenshotPath)
         {
-            Test.Log(Status.Fail, MarkupHelper.CreateLabel($"{log} {Test.AddScreenCaptureFromPath(screenshotPath)}", ExtentColor.Red));
+            Test.Log(Status.Fail, $"{log} {Test.AddScreenCaptureFromPath(screenshotPath)}");
+        }
+
+        public static void LogFail(string log)
+        {
+            Test.Log(Status.Fail, log);
         }
 
         public static void LogSkip(string log)
         {
-            Test.Log(Status.Skip, MarkupHelper.CreateLabel(log, ExtentColor.Yellow));
+            Test.Log(Status.Skip, log);
+        }
+
+        public static void SetLogs(string message)
+        {
+            Serilog.Log.Information(message);
+            Log(message);
         }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using FinalAssignment.PageObjectLibrary;
 using FinalAssignment.Utils;
 using NUnit.Framework;
@@ -13,16 +10,27 @@ namespace FinalAssignment.Tests
 {
     [TestFixture]
     [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
-    class TestSuite : SeleniumActions
-    {
+    class UITestSuite 
+    {       
 
-        private AtataSampleAppPage _samplePage = new AtataSampleAppPage();
+        [OneTimeSetUp]
+        public void BeforeTests()
+        {
+            if (TestContext.Parameters["DriverType"] != null)
+            {
+                DriverFactory.InstantiateDriver(TestContext.Parameters["DriverType"]);
+            }
+            else
+            {
+                DriverFactory.InstantiateDriver(ConfigurationManager.AppSettings["DriverType"]);
+            }
+        }
 
         [SetUp]
         public void SetUp()
         {
             Reporter.WriteTestName(TestContext.CurrentContext.Test.MethodName);
-            base.GoToPage("https://atata-framework.github.io/atata-sample-app/#!/");
+            DriverFactory.GoToPage("https://atata-framework.github.io/atata-sample-app/#!/");            
             new AtataIndexPage().ClickSignInButton();
             new AtataSignInPage().SubmitSignInForm();
         }
@@ -38,12 +46,15 @@ namespace FinalAssignment.Tests
             Log.Information("Starting 'ValidateUserDetails test...Timeouts set to 5 seconds.'");
             Log.Information($"Test data for this test: user index - {testData[0]}, fullname -{testData[1]}, " +
                 $"email - {testData[2]}, city - {testData[3]}, gender - {testData[4]}");
+            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             _samplePage.ViewUserDetails(Convert.ToInt32(testData[0]));
-            base.ValidateText("xpath=//h1", testData[1]);
-            base.ValidateText("css=div.summary-container>div>dl:nth-child(1)>dd", testData[2]);
-            base.ValidateText("css=div.summary-container>div>dl:nth-child(2)>dd", testData[3]);
-            base.ValidateText("css=div.summary-container>div>dl:nth-child(3)>dd", testData[4]);
-            base.ToPreviousPage();
+
+            SeleniumActions actions = new SeleniumActions();
+            actions.ValidateText("xpath=//h1", testData[1]);
+            actions.ValidateText("css=div.summary-container>div>dl:nth-child(1)>dd", testData[2]);
+            actions.ValidateText("css=div.summary-container>div>dl:nth-child(2)>dd", testData[3]);
+            actions.ValidateText("css=div.summary-container>div>dl:nth-child(3)>dd", testData[4]);
+            actions.ToPreviousPage();
         }
 
         [Test, Sequential]
@@ -54,9 +65,11 @@ namespace FinalAssignment.Tests
         public void CalculateValue([Values(2, 5, 7)] int firstOperand, [Values(2, 3, 2)] int secondOperand, [Values(4, 8, 9)] int result)
         {
             Log.Information("Starting 'Calculate Addition Value' test. Timeouts set to 5 seconds.");
+            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             _samplePage.GoToCalculationsTab();
             Log.Information($"Test data for this test first operand: {firstOperand}, second operand: {secondOperand}, expected result: {result}");
-            Assert.That(base.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/calculations"));
+            SeleniumActions actions = new SeleniumActions();
+            Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/calculations"));
             Assert.That(_samplePage.ConductCalculations(firstOperand, secondOperand), Is.EqualTo(result.ToString()));
         }
 
@@ -68,11 +81,13 @@ namespace FinalAssignment.Tests
         public void ValidatePlans()
         {
             Log.Information("Starting 'ValidatePlans test...Timeouts set to 5 seconds.'");
+            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             _samplePage.GoToPlansTab();
-            Assert.That(base.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/plans"));
-            base.ValidateText("xpath=//h3[text()='Basic']/following-sibling::b", "$0");
-            base.ValidateText("xpath=//h3[text()='Plus']/following-sibling::b", "$19.99");
-            base.ValidateText("xpath=//h3[text()='Premium']/following-sibling::b", "$49.99");
+            SeleniumActions actions = new SeleniumActions();
+            Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/plans"));
+            actions.ValidateText("xpath=//h3[text()='Basic']/following-sibling::b", "$0");
+            actions.ValidateText("xpath=//h3[text()='Plus']/following-sibling::b", "$19.99");
+            actions.ValidateText("xpath=//h3[text()='Premium']/following-sibling::b", "$49.99");
         }
 
         [Test]
@@ -83,16 +98,18 @@ namespace FinalAssignment.Tests
         public void ValidatePricesProductsTab()
         {
             Log.Information("Starting 'ValidateProducts test...Timeouts set to 5 seconds. This test is about to fail.'");
+            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             _samplePage.GoToProductsTab();
-            Assert.That(base.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/products"));            
-            base.ValidateText("xpath=//tbody/tr[1]/td[2]", "$127.00");
+            SeleniumActions actions = new SeleniumActions();
+            Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/products"));
+            actions.ValidateText("xpath=//tbody/tr[1]/td[2]", "$127.00");
         }
 
         [TearDown]
         public void TearDown()
         {
             var message = "";
-
+            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             _samplePage.Logout();
 
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
@@ -101,7 +118,7 @@ namespace FinalAssignment.Tests
                 var errorMessage = TestContext.CurrentContext.Result.Message;
                 message = $"Test failed! Stack trace of an error is {stackTrace}{errorMessage}";
                 Log.Debug(message);
-                Reporter.LogFail(message, base.TakeScreenshot());
+                Reporter.LogFail(message, DriverFactory.TakeScreenshot());
 
             }
             else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
@@ -117,6 +134,12 @@ namespace FinalAssignment.Tests
                 Log.Debug(message);
                 Reporter.Log(message);
             }                
+        }
+
+        [OneTimeTearDown]
+        public void AfterTests()
+        {
+            DriverFactory.CloseAllDrivers();
         }
     }
 }

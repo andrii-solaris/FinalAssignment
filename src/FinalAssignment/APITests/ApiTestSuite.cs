@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
-using RestSharp;
-using FinalAssignment.Utils;
+﻿using FinalAssignment.Utils;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using Serilog;
 
-namespace FinalAssignment.APITests
+namespace FinalAssignment.Tests
 {
     [TestFixture]
     class ApiTestSuite : ApiController
@@ -12,6 +12,7 @@ namespace FinalAssignment.APITests
         [SetUp]
         public void SetUp()
         {
+            Reporter.WriteTestName(TestContext.CurrentContext.Test.MethodName);
             Initialize("https://jsonplaceholder.typicode.com/");
         }
 
@@ -47,6 +48,36 @@ namespace FinalAssignment.APITests
                 });
 
             ValidateAPIResponse(response, "title", "MyPhotoTestUpdated");
-        }        
+        }  
+        
+        [TearDown]
+        public void TearDown()
+        {
+
+            var message = "";
+
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {               
+                var stackTrace = TestContext.CurrentContext.Result.StackTrace;
+                var errorMessage = TestContext.CurrentContext.Result.Message;
+                message = $"Test failed! Stack trace of an error is {stackTrace}{errorMessage}";
+                Log.Debug(message);
+                Reporter.LogFail(message);
+
+            }
+            else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
+            {
+                message = "Test passed!";
+                Log.Debug(message);
+                Reporter.Log(message);
+            }
+
+            else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Skipped)
+            {
+                message = "Test skipped!";
+                Log.Debug(message);
+                Reporter.Log(message);
+            }
+        }
     }
 }

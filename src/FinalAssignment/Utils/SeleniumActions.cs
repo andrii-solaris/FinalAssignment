@@ -15,13 +15,13 @@ namespace FinalAssignment.Utils
     class SeleniumActions
     {
         private IWebDriver _driver;
-        private WebDriverWait Wait;        
-
+        private WebDriverWait Wait;
+        
         public SeleniumActions()
         {
             this._driver = DriverFactory.Driver;
             Log.Debug("Actions.class instance created...");
-        }
+        }        
 
         private void WaitFor(string locator, bool isCollection = false)
         {
@@ -306,13 +306,7 @@ namespace FinalAssignment.Utils
         {
             SetLogs("Refreshing the page");
             _driver.Navigate().Refresh();
-        }
-
-        public void GoToPage(string pageUrl)
-        {
-            SetLogs($"Navigating to the page by the following url: {pageUrl}");
-            _driver.Navigate().GoToUrl(pageUrl);
-        }
+        }        
 
         public void ValidateText(string locator, string expectedValue)
         {
@@ -346,23 +340,7 @@ namespace FinalAssignment.Utils
         {
             SetLogs($"Moving and hovering over the element by its locator {locator}");
             new Actions(_driver).MoveToElement(_driver.FindElement(ProcessLocator(locator))).Perform();
-        }
-
-        public string TakeScreenshot()
-        {
-            Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-
-            var currentDirectory = $@"{Constants.CurrentDirectory}\FinalAssignment\Reports";
-            var screenshotPath = Path.Combine(currentDirectory, Constants.Directory, $"screenshot_{DateTime.Now:HH_ mm_ ss}.png");
-
-            Log.Debug($"Taking screenshot and saving it to {screenshotPath}");
-
-            screenshot.SaveAsFile(screenshotPath);
-
-            TestContext.AddTestAttachment(screenshotPath);
-
-            return screenshotPath;
-        }
+        }        
 
         public void SwitchToWindow(int windowIndex)
         {
@@ -429,5 +407,6 @@ namespace FinalAssignment.Utils
             Log.Information(message);
             Reporter.Log(message);
         }
+
     }
 }
