@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using FinalAssignment.Utils;
 
 namespace FinalAssignment.Tests
 {
@@ -11,8 +12,12 @@ namespace FinalAssignment.Tests
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new string[] { "1", "John Smith", "admin@mail.com", "London", "Male" };
-            yield return new string[] { "2", "Jane Smith", "jane.smith@mail.com", "Tokio", "Female" };
+            
+            foreach(var item in HotelDataCreator.GetCreator())
+            {                
+                yield return new string[] { item.HotelName, item.HotelDescription, item.HotelStars, item.HotelStars, item.HotelLocation };
+            }                      
+            
         }
     }
 }

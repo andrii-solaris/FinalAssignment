@@ -311,9 +311,9 @@ namespace FinalAssignment.Utils
         public void ValidateText(string locator, string expectedValue)
         {
             WaitFor(locator);
-            var element = _driver.FindElement(ProcessLocator(locator)).Text;
-            SetLogs($"Checking if the text {element} of the element {locator} is equal to expected one: {expectedValue}");
+            var element = _driver.FindElement(ProcessLocator(locator)).Text;            
             element.Should().Contain(expectedValue);
+            SetLogs($"Text {element} of the element {locator} is equal to expected value: {expectedValue}");
         }
 
         public string GetCurrentUrl()

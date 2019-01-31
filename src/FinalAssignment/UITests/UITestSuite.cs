@@ -30,9 +30,8 @@ namespace FinalAssignment.Tests
         public void SetUp()
         {
             Reporter.WriteTestName(TestContext.CurrentContext.Test.MethodName);
-            DriverFactory.GoToPage("https://atata-framework.github.io/atata-sample-app/#!/");            
-            new AtataIndexPage().ClickSignInButton();
-            new AtataSignInPage().SubmitSignInForm();
+            DriverFactory.GoToPage("https://www.phptravels.net/admin");
+            new PhpTravelsAdminLoginPage().SubmitSignInForm();
         }
 
         [Test]
@@ -46,15 +45,15 @@ namespace FinalAssignment.Tests
             Log.Information("Starting 'ValidateUserDetails test...Timeouts set to 5 seconds.'");
             Log.Information($"Test data for this test: user index - {testData[0]}, fullname -{testData[1]}, " +
                 $"email - {testData[2]}, city - {testData[3]}, gender - {testData[4]}");
-            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            _samplePage.ViewUserDetails(Convert.ToInt32(testData[0]));
+            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
+            //_samplePage.ViewUserDetails(Convert.ToInt32(testData[0]));
 
-            SeleniumActions actions = new SeleniumActions();
-            actions.ValidateText("xpath=//h1", testData[1]);
-            actions.ValidateText("css=div.summary-container>div>dl:nth-child(1)>dd", testData[2]);
-            actions.ValidateText("css=div.summary-container>div>dl:nth-child(2)>dd", testData[3]);
-            actions.ValidateText("css=div.summary-container>div>dl:nth-child(3)>dd", testData[4]);
-            actions.ToPreviousPage();
+            //SeleniumActions actions = new SeleniumActions();
+            //actions.ValidateText("xpath=//h1", testData[1]);
+            //actions.ValidateText("css=div.summary-container>div>dl:nth-child(1)>dd", testData[2]);
+            //actions.ValidateText("css=div.summary-container>div>dl:nth-child(2)>dd", testData[3]);
+            //actions.ValidateText("css=div.summary-container>div>dl:nth-child(3)>dd", testData[4]);
+            //actions.ToPreviousPage();
         }
 
         [Test, Sequential]
@@ -65,12 +64,12 @@ namespace FinalAssignment.Tests
         public void CalculateValue([Values(2, 5, 7)] int firstOperand, [Values(2, 3, 2)] int secondOperand, [Values(4, 8, 9)] int result)
         {
             Log.Information("Starting 'Calculate Addition Value' test. Timeouts set to 5 seconds.");
-            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            _samplePage.GoToCalculationsTab();
-            Log.Information($"Test data for this test first operand: {firstOperand}, second operand: {secondOperand}, expected result: {result}");
-            SeleniumActions actions = new SeleniumActions();
-            Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/calculations"));
-            Assert.That(_samplePage.ConductCalculations(firstOperand, secondOperand), Is.EqualTo(result.ToString()));
+            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
+            //_samplePage.GoToCalculationsTab();
+            //Log.Information($"Test data for this test first operand: {firstOperand}, second operand: {secondOperand}, expected result: {result}");
+            //SeleniumActions actions = new SeleniumActions();
+            //Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/calculations"));
+            //Assert.That(_samplePage.ConductCalculations(firstOperand, secondOperand), Is.EqualTo(result.ToString()));
         }
 
         [Test]
@@ -81,13 +80,13 @@ namespace FinalAssignment.Tests
         public void ValidatePlans()
         {
             Log.Information("Starting 'ValidatePlans test...Timeouts set to 5 seconds.'");
-            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            _samplePage.GoToPlansTab();
-            SeleniumActions actions = new SeleniumActions();
-            Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/plans"));
-            actions.ValidateText("xpath=//h3[text()='Basic']/following-sibling::b", "$0");
-            actions.ValidateText("xpath=//h3[text()='Plus']/following-sibling::b", "$19.99");
-            actions.ValidateText("xpath=//h3[text()='Premium']/following-sibling::b", "$49.99");
+            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
+            //_samplePage.GoToPlansTab();
+            //SeleniumActions actions = new SeleniumActions();
+            //Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/plans"));
+            //actions.ValidateText("xpath=//h3[text()='Basic']/following-sibling::b", "$0");
+            //actions.ValidateText("xpath=//h3[text()='Plus']/following-sibling::b", "$19.99");
+            //actions.ValidateText("xpath=//h3[text()='Premium']/following-sibling::b", "$49.99");
         }
 
         [Test]
@@ -98,19 +97,19 @@ namespace FinalAssignment.Tests
         public void ValidatePricesProductsTab()
         {
             Log.Information("Starting 'ValidateProducts test...Timeouts set to 5 seconds. This test is about to fail.'");
-            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            _samplePage.GoToProductsTab();
-            SeleniumActions actions = new SeleniumActions();
-            Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/products"));
-            actions.ValidateText("xpath=//tbody/tr[1]/td[2]", "$127.00");
+            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
+            //_samplePage.GoToProductsTab();
+            //SeleniumActions actions = new SeleniumActions();
+            //Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/products"));
+            //actions.ValidateText("xpath=//tbody/tr[1]/td[2]", "$127.00");
         }
 
         [TearDown]
         public void TearDown()
         {
             var message = "";
-            AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            _samplePage.Logout();
+            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
+            //_samplePage.Logout();
 
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
