@@ -15,7 +15,7 @@ namespace FinalAssignment.Tests
             
             foreach(var item in HotelDataCreator.GetCreator())
             {                
-                yield return new string[] { item.HotelName, item.HotelDescription, item.HotelStars, item.HotelStars, item.HotelLocation };
+                yield return new string[] { item.HotelName, item.HotelDescription, item.HotelStars, item.HotelType, item.HotelLocation };
             }                      
             
         }

@@ -130,7 +130,7 @@
     <Compile Include="APITests\ApiTestSuite.cs" />
     <Compile Include="PageObjectLibrary\HotelEditPage.cs" />
     <Compile Include="PageObjectLibrary\PhpTravelsAdminLoginPage.cs" />
-    <Compile Include="PageObjectLibrary\PHPTravelsDashboardPage.cs" />
+    <Compile Include="PageObjectLibrary\PhpTravelsDashboardPage.cs" />
     <Compile Include="Utils\ApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UITests\TestDataProvider.cs" />

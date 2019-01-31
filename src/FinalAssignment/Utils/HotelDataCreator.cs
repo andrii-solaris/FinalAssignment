@@ -19,7 +19,7 @@ namespace FinalAssignment.Utils
         public static List<HotelDataCreator> GetCreator()
         {
 
-            var hotelType = new[] { "Apartment", "Hotel", "GuestHouse", "Motel", "Residence", "Resort" };
+            var hotelType = new[] { "Apartment", "Hotel", "Guest House", "Motel", "Residence", "Resort" };
 
             var userFaker =  new Faker<HotelDataCreator>()
                  .StrictMode(false)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalAssignment.PageObjectLibrary
 {
-    class PHPTravelsDashboardPage : SeleniumActions
+    class PhpTravelsDashboardPage : SeleniumActions
     {
         public void ExpandHotelsDropdown()
         {

@@ -36,15 +36,33 @@ namespace FinalAssignment.Tests
 
         [Test]
         [Order(1)]
-        [Timeout(5000)]
+        [Timeout(15000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
-        [Description("Validates full name, email, city and gender of registered users")]
+        [Description("Creates a set of hotel records using random input data")]
         [TestCaseSource(typeof(TestDataProvider))]
-        public void ValidateUserDetails(string[] testData)
+        public void CreateHotelsRange(string[] testData)
         {
             Log.Information("Starting 'ValidateUserDetails test...Timeouts set to 5 seconds.'");
-            Log.Information($"Test data for this test: user index - {testData[0]}, fullname -{testData[1]}, " +
-                $"email - {testData[2]}, city - {testData[3]}, gender - {testData[4]}");
+            Reporter.SetLogs($"Test data for this test: hotel name - {testData[0]}, hotel description -{testData[1]}, " +
+                $"hotel stars - {testData[2]}, hotel type - {testData[3]}, hotel location - {testData[4]}");
+
+            PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage();
+            dashboard.ExpandHotelsDropdown();
+            dashboard.ClickHotelsLink();
+            dashboard.Add();
+
+            new HotelEditPage().
+                SetHotelName(testData[0]).
+                SetHotelDescription(testData[1]).
+                SetHotelStars(testData[2]).
+                SetHotelType(testData[3]).
+                ExpandLocationDropdown().
+                SetHotelLocation(testData[4]).
+                SetDateFrom("23/07/2019").
+                SetDateTo("23/07/2019").
+                ClickSubmit();
+            
+
             //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             //_samplePage.ViewUserDetails(Convert.ToInt32(testData[0]));
 

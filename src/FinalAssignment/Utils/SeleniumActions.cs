@@ -286,6 +286,30 @@ namespace FinalAssignment.Utils
             SetLogs($"Dropdown element was selected by index: {index}");
         }
 
+        public void SelectDropdownElement(string locator, string value)
+        {
+            WaitFor(locator);
+
+            SelectElement selectElement = new SelectElement(_driver.FindElement(ProcessLocator(locator)));
+            Log.Debug($"Select instance created by the following locator of the dropdown: {locator}");
+
+            selectElement.SelectByValue(value);
+
+            SetLogs($"Dropdown element was selected by value: {value}");
+        }
+
+        public void SelectDropdownElementByText(string locator, string text)
+        {
+            WaitFor(locator);
+
+            SelectElement selectElement = new SelectElement(_driver.FindElement(ProcessLocator(locator)));
+            Log.Debug($"Select instance created by the following locator of the dropdown: {locator}");
+
+            selectElement.SelectByText(text);
+
+            SetLogs($"Dropdown element was selected by value: {text}");
+        }
+
         public void SubmitForm(string locator)
         {
             WaitFor(locator);
