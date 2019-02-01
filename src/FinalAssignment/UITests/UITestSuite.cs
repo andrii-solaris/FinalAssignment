@@ -99,16 +99,15 @@ namespace FinalAssignment.Tests
         [Timeout(5000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
         [Description("Navigates to 'Plans' tab, validates that the price of Basic, Plus and Premium plans displays as expected")]
-        public void ValidatePlans()
+        public void CreateRooms()
         {
-            Log.Information("Starting 'ValidatePlans test...Timeouts set to 5 seconds.'");
-            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            //_samplePage.GoToPlansTab();
-            //SeleniumActions actions = new SeleniumActions();
-            //Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/plans"));
-            //actions.ValidateText("xpath=//h3[text()='Basic']/following-sibling::b", "$0");
-            //actions.ValidateText("xpath=//h3[text()='Plus']/following-sibling::b", "$19.99");
-            //actions.ValidateText("xpath=//h3[text()='Premium']/following-sibling::b", "$49.99");
+            Reporter.SetLogs("Starting 'ValidatePlans test...Timeouts set to 5 seconds.'");
+
+            PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage().
+                ExpandHotelsDropdown().
+                ClickRoomsLink().
+                Add();
+
         }
 
         [Test]
