@@ -44,7 +44,7 @@ namespace FinalAssignment.PageObjectLibrary
 
         public HotelEditPage ExpandLocationDropdown()
         {
-            Click("xpath=//span[text()='Enter Location']");
+            Click("xpath=//div[@id='s2id_searching']/a/span[1]");
 
             return this;
         }
@@ -75,7 +75,8 @@ namespace FinalAssignment.PageObjectLibrary
 
         public HotelEditPage ClickSubmit()
         {
-            Click("id=add");            
+            Click("xpath=//button[text()='Submit']");     
+            
             return this;
         }
     }

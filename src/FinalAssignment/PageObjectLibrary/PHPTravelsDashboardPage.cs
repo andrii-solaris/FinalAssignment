@@ -52,5 +52,12 @@ namespace FinalAssignment.PageObjectLibrary
 
             return this;
         }
+
+        public PhpTravelsDashboardPage EditFirst()
+        {
+            Click("xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i");            
+
+            return this;
+        }
     }
 }

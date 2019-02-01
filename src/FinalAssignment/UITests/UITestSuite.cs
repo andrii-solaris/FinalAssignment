@@ -35,13 +35,14 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
-        [Order(1)]        
+        [Order(1)] 
+        [Timeout(80000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]       
         [Description("Creates a set of hotel records using random input data")]
         [TestCaseSource(typeof(TestDataProvider))]
         public void CreateHotelsRange(string[] testData)
         {
-            Log.Information("Starting 'ValidateUserDetails test...Timeouts set to 5 seconds.'");
+            Reporter.SetLogs("Starting 'ValidateUserDetails test...'");
             Reporter.SetLogs($"Test data for this test: hotel name - {testData[0]}, hotel description -{testData[1]}, " +
                 $"hotel stars - {testData[2]}, hotel type - {testData[3]}, hotel location - {testData[4]}");
 
@@ -64,33 +65,33 @@ namespace FinalAssignment.Tests
             new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", testData[0]);
             new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[8]", testData[4]);
 
-            dashboard.DeleteFirst();                
-
-            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            //_samplePage.ViewUserDetails(Convert.ToInt32(testData[0]));
-
-            //SeleniumActions actions = new SeleniumActions();
-            //actions.ValidateText("xpath=//h1", testData[1]);
-            //actions.ValidateText("css=div.summary-container>div>dl:nth-child(1)>dd", testData[2]);
-            //actions.ValidateText("css=div.summary-container>div>dl:nth-child(2)>dd", testData[3]);
-            //actions.ValidateText("css=div.summary-container>div>dl:nth-child(3)>dd", testData[4]);
-            //actions.ToPreviousPage();
+                dashboard.DeleteFirst();
         }
 
-        [Test, Sequential]
+        [Test, Pairwise]
         [Order(2)]
-        [Timeout(5000)]
+        [Timeout(80000)]        
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
         [Description("Navigates to 'Calculations' tab, enters first and second operand, validates the result of addition")]
-        public void CalculateValue([Values(2, 5, 7)] int firstOperand, [Values(2, 3, 2)] int secondOperand, [Values(4, 8, 9)] int result)
+        public void EditHotels([Values("Firstly Edited", "Secondly Edited")] string name, [Values("New York", "Dallas")] string location)
         {
-            Log.Information("Starting 'Calculate Addition Value' test. Timeouts set to 5 seconds.");
-            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            //_samplePage.GoToCalculationsTab();
-            //Log.Information($"Test data for this test first operand: {firstOperand}, second operand: {secondOperand}, expected result: {result}");
-            //SeleniumActions actions = new SeleniumActions();
-            //Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/calculations"));
-            //Assert.That(_samplePage.ConductCalculations(firstOperand, secondOperand), Is.EqualTo(result.ToString()));
+            Reporter.SetLogs("Starting 'Edit Hotels' test.");
+            Reporter.SetLogs($"Test data for this test: hotel name - {name}, hotel location - {location}");
+
+            PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage().
+                ExpandHotelsDropdown().
+                ClickHotelsLink().
+                EditFirst();
+
+            new HotelEditPage().
+                SetHotelName(name).                
+                ExpandLocationDropdown().
+                SetHotelLocation(location).
+                ClickSubmit();
+
+            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", name);
+            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[8]", location);
+
         }
 
         [Test]

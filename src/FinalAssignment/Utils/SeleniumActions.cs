@@ -148,6 +148,7 @@ namespace FinalAssignment.Utils
             //WaitFor(locator);
             SetLogs($"Setting the text in the element by its locator: {locator}");
             var element = _driver.FindElement(ProcessLocator(locator));
+            element.Clear();
             element.SendKeys(text);
 
             return element;
