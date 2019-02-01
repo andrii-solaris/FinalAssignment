@@ -20,6 +20,7 @@ namespace FinalAssignment.Utils
         {
 
             var hotelType = new[] { "Apartment", "Hotel", "Guest House", "Motel", "Residence", "Resort" };
+            var hotelLocation = new[] { "London", "Ternopol", "Glasgow", "Bristol", "Madrid", "Canberra" };
 
             var userFaker =  new Faker<HotelDataCreator>()
                  .StrictMode(false)
@@ -27,9 +28,9 @@ namespace FinalAssignment.Utils
                  .RuleFor(o => o.HotelDescription, f => f.Lorem.Paragraph())                 
                  .RuleFor(o => o.HotelStars, f => (f.Random.Number(4) + 1).ToString())
                  .RuleFor(o => o.HotelType, f => f.PickRandom(hotelType))
-                 .RuleFor(o => o.HotelLocation, f => f.Address.City());
+                 .RuleFor(o => o.HotelLocation, f => f.PickRandom(hotelLocation));
 
-            return userFaker.Generate(10);
+            return userFaker.Generate(5);
         }
     }
 }

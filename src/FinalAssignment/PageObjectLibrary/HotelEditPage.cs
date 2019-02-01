@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsInput.Native;
+using System.Threading;
 
 namespace FinalAssignment.PageObjectLibrary
 {
@@ -50,6 +52,9 @@ namespace FinalAssignment.PageObjectLibrary
         public HotelEditPage SetHotelLocation(string location)
         {
             SetText("xpath=//div[@id='select2-drop']/div/input", location);
+            Thread.Sleep(2000);            
+            PressKey(VirtualKeyCode.RETURN);
+            
 
             return this;
         }
@@ -70,8 +75,7 @@ namespace FinalAssignment.PageObjectLibrary
 
         public HotelEditPage ClickSubmit()
         {
-            Click("id=add");
-
+            Click("id=add");            
             return this;
         }
     }

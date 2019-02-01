@@ -4,34 +4,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace FinalAssignment.PageObjectLibrary
 {
     class PhpTravelsDashboardPage : SeleniumActions
     {
-        public void ExpandHotelsDropdown()
-        {
-            Click("xpath=//a[@href='#Hotels']");
+        public PhpTravelsDashboardPage ExpandHotelsDropdown()
+        {            
+            Click("xpath=//a[@href='#Hotels']");            
+
+            return this;
         }
 
-        public void ClickHotelsLink()
+        public PhpTravelsDashboardPage ClickHotelsLink()
         {
             Click("xpath=//a[text()='Hotels']");
+
+            return this;
         }
 
-        public void ClickRoomsLink()
+        public PhpTravelsDashboardPage ClickRoomsLink()
         {
             Click("xpath=//a[text()='Rooms']");
+
+            return this;
         }
 
-        public void LogOut()
+        public PhpTravelsDashboardPage LogOut()
         {
             Click("xpath=//a[text()='Log Out']");
+
+            return this;
         }
 
-        public void Add()
+        public PhpTravelsDashboardPage Add()
         {
             Click("xpath=//button[contains(text(),'Add')]");
+
+            return this;
+        }
+
+        public PhpTravelsDashboardPage DeleteFirst()
+        {
+            Click("xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i");            
+            AcceptAlert();            
+
+            return this;
         }
     }
 }

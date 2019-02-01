@@ -35,9 +35,8 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
-        [Order(1)]
-        [Timeout(15000)]
-        [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
+        [Order(1)]        
+        [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]       
         [Description("Creates a set of hotel records using random input data")]
         [TestCaseSource(typeof(TestDataProvider))]
         public void CreateHotelsRange(string[] testData)
@@ -46,22 +45,26 @@ namespace FinalAssignment.Tests
             Reporter.SetLogs($"Test data for this test: hotel name - {testData[0]}, hotel description -{testData[1]}, " +
                 $"hotel stars - {testData[2]}, hotel type - {testData[3]}, hotel location - {testData[4]}");
 
-            PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage();
-            dashboard.ExpandHotelsDropdown();
-            dashboard.ClickHotelsLink();
-            dashboard.Add();
+            PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage().
+                ExpandHotelsDropdown().
+                ClickHotelsLink().
+                Add();
 
             new HotelEditPage().
                 SetHotelName(testData[0]).
                 SetHotelDescription(testData[1]).
                 SetHotelStars(testData[2]).
                 SetHotelType(testData[3]).
-                ExpandLocationDropdown().
-                SetHotelLocation(testData[4]).
                 SetDateFrom("23/07/2019").
                 SetDateTo("23/07/2019").
+                ExpandLocationDropdown().
+                SetHotelLocation(testData[4]).                
                 ClickSubmit();
-            
+
+            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", testData[0]);
+            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[8]", testData[4]);
+
+            dashboard.DeleteFirst();                
 
             //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             //_samplePage.ViewUserDetails(Convert.ToInt32(testData[0]));
@@ -125,7 +128,11 @@ namespace FinalAssignment.Tests
         [TearDown]
         public void TearDown()
         {
+
+            new PhpTravelsDashboardPage().LogOut();
+
             var message = "";
+
             //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
             //_samplePage.Logout();
 
