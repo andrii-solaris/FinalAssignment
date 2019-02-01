@@ -108,7 +108,7 @@ namespace FinalAssignment.Utils
         public static void GoToPage(string pageUrl)
         {
             Reporter.SetLogs($"Navigating to the page by the following url: {pageUrl}");
-            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(3);
+            _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(5);
             _driver.Navigate().GoToUrl(pageUrl);
         }
 

@@ -23,7 +23,7 @@ namespace FinalAssignment.Utils
         {
             this._driver = DriverFactory.Driver;
             Log.Debug("Actions.class instance created...");
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
         }        
 
         //private void WaitFor(string locator, bool isCollection = false)
