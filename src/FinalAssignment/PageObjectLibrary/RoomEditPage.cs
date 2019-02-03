@@ -27,6 +27,22 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        public RoomEditPage ExpandHotelDropdown()
+        {
+            Click("xpath=//label[text()='Hotel']/following-sibling::div/div/a/span[1]");
+
+            return this;
+        }
+
+        public RoomEditPage SetHotel(string hotel)
+        {
+            SetText("xpath=//div[@id='select2-drop']/div/input", hotel);
+            Thread.Sleep(2000);
+            PressKey(VirtualKeyCode.RETURN);
+
+            return this;
+        }
+
         public RoomEditPage SetRoomDescription(string description)
         {
             SwitchToFrame("xpath=//div[@id='cke_1_contents']/iframe");

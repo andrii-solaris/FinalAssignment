@@ -103,7 +103,7 @@ namespace FinalAssignment.Tests
         [Timeout(80000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
         [TestCaseSource(typeof(RoomDataProvider))]
-        [Description("Navigates to 'Plans' tab, validates that the price of Basic, Plus and Premium plans displays as expected")]
+        [Description("Creates a range of rooms in a Rendezvous Hotel")]
         public void CreateRoomRange(string[] testData)
         {
             Reporter.SetLogs("Starting 'Create Rooms test...'");
@@ -142,17 +142,27 @@ namespace FinalAssignment.Tests
 
         [Test]
         [Order(4)]
-        [Timeout(5000)]       
+        [Timeout(80000)]       
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
-        [Description("Navigates to 'Products' tab. This test fails.")]
-        public void ValidatePricesProductsTab()
+        [Description("Changes Rendezvous Hotel to another ones")]
+        public void ReassignRoomToHotel([Values("Malmaison Manchester", "Alzer Hotel Istanbul")] string hotelName)
         {
-            Log.Information("Starting 'ValidateProducts test...Timeouts set to 5 seconds. This test is about to fail.'");
-            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            //_samplePage.GoToProductsTab();
-            //SeleniumActions actions = new SeleniumActions();
-            //Assert.That(actions.GetCurrentUrl(), Is.EqualTo("https://atata-framework.github.io/atata-sample-app/#!/products"));
-            //actions.ValidateText("xpath=//tbody/tr[1]/td[2]", "$127.00");
+
+            Reporter.SetLogs("Starting 'Edit Hotels' test.");
+            Reporter.SetLogs($"Test data for this test: hotel name - {hotelName}");
+
+            PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage().
+                ExpandHotelsDropdown().
+                ClickRoomsLink().
+                EditFirstRoom();
+
+            new RoomEditPage().
+                ExpandHotelDropdown().
+                SetHotel(hotelName).
+                ClickSubmit();
+
+            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[4]", hotelName);
+
         }
 
         [TearDown]
@@ -161,10 +171,7 @@ namespace FinalAssignment.Tests
 
             new PhpTravelsDashboardPage().LogOut();
 
-            var message = "";
-
-            //AtataSampleAppPage _samplePage = new AtataSampleAppPage();
-            //_samplePage.Logout();
+            var message = "";            
 
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
