@@ -17,6 +17,10 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
+        [Order(1)]
+        [Timeout(5000)]
+        [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
+        [Description("Gets title of the first post and compares it against the expected result via API.")]
         public void ApiGetFirstPostTitle()
         {
             var response = GetRequest("posts/1");
@@ -24,6 +28,10 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
+        [Order(2)]
+        [Timeout(5000)]
+        [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
+        [Description("Creates a record in a database via API using preset data, validates record was created.")]
         public void ApiCreateNewPhoto()
         {
             var response = PostRequest("photos",
@@ -39,6 +47,10 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
+        [Order(3)]
+        [Timeout(5000)]
+        [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
+        [Description("Updates a title field of a specified record via API, validates field was updated.")]
         public void ApiPatchCreatedPhoto()
         {
             var response = PatchRequest("photos/5000",

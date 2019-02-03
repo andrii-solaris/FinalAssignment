@@ -1,7 +1,5 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
-using AventStack.ExtentReports.MarkupUtils;
-using System;
 
 namespace FinalAssignment.Utils
 {  

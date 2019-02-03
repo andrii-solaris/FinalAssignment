@@ -1,0 +1,3203 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Final Automation Course Assignment</title>
+  <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/cd00a5e/spark/css/style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+
+
+
+<body class="test-view  dark">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">UI and API tests</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">2/3/2019 11:39:19 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+									<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-exclamation-circle"></i>
+										</a>
+										<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																																																		<div class="dropdown-divider"></div>
+											<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+										</ul>
+									</li>
+																		                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">ApiGetFirstPostTitle</p> 
+													<p class="duration text-sm">0h:0m:0s+767ms</p> 
+													<span class="datetime">23:39:19 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">ApiGetFirstPostTitle</h5>
+															<span class='badge badge-success'>2/3/2019 11:39:19 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:39:20 PM</span>
+															<span class='badge badge-default'>0h:0m:0s+767ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:19</td>
+				<td>
+Base URL for API request is set to https://jsonplaceholder.typicode.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:19</td>
+				<td>
+Executing GET API request with the following parameter: posts/1									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Response code is: OK									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Validating the following element of the response: title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+The expected value sunt aut facere repellat provident occaecati excepturi optio reprehenderit matches the actual one: sunt aut facere repellat provident occaecati excepturi optio reprehenderit									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">ApiCreateNewPhoto</p> 
+													<p class="duration text-sm">0h:0m:0s+526ms</p> 
+													<span class="datetime">23:39:20 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">ApiCreateNewPhoto</h5>
+															<span class='badge badge-success'>2/3/2019 11:39:20 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:39:20 PM</span>
+															<span class='badge badge-default'>0h:0m:0s+526ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Base URL for API request is set to https://jsonplaceholder.typicode.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Executing POST API request with the following parameter: photos									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Request has been set up with the following body: { albumId = 1, title = MyPhotoTest, url = https://via.placeholder.com/600/92c952, thumbnailUrl = https://via.placeholder.com/150/92c952 }									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Response code is: Created									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Validating the following element of the response: id									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+The expected value 5001 matches the actual one: 5001									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">ApiPatchCreatedPhoto</p> 
+													<p class="duration text-sm">0h:0m:0s+575ms</p> 
+													<span class="datetime">23:39:20 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">ApiPatchCreatedPhoto</h5>
+															<span class='badge badge-success'>2/3/2019 11:39:20 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:39:21 PM</span>
+															<span class='badge badge-default'>0h:0m:0s+575ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Base URL for API request is set to https://jsonplaceholder.typicode.com/									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Executing PATCH API request with the following parameter: photos/5000									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:20</td>
+				<td>
+Request has been set up with the following body: { title = MyPhotoTestUpdated }									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:21</td>
+				<td>
+Response code is: OK									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:21</td>
+				<td>
+Validating the following element of the response: title									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:21</td>
+				<td>
+The expected value MyPhotoTestUpdated matches the actual one: MyPhotoTestUpdated									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:21</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateHotelsRange</p> 
+													<p class="duration text-sm">0h:0m:21s+651ms</p> 
+													<span class="datetime">23:39:23 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateHotelsRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:39:23 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:39:45 PM</span>
+															<span class='badge badge-default'>0h:0m:21s+651ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:23</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:25</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:25</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:25</td>
+				<td>
+Starting 'Create Hotel range test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:25</td>
+				<td>
+Test data for this test: hotel name - O'Hara, Barrows and Rippin, hotel description -Sed consequatur ut molestias earum nihil asperiores et quibusdam nulla. Optio qui et maxime dicta animi perferendis quibusdam voluptatem quidem. Architecto veritatis temporibus reprehenderit ab. Ut esse aliquam explicabo eius quas. Provident aut consectetur eum quia., hotel stars - 5, hotel type - Motel, hotel location - Canberra									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:25</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:29</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:32</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:34</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:35</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:35</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:36</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:36</td>
+				<td>
+Dropdown element was selected by value: 5									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:37</td>
+				<td>
+Dropdown element was selected by value: Motel									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:37</td>
+				<td>
+Setting the text in the element by its locator: name=ffrom									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:37</td>
+				<td>
+Setting the text in the element by its locator: name=fto									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:37</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:37</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:39</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:39</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:43</td>
+				<td>
+Text O'Hara, Barrows and Rippin of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: O'Hara, Barrows and Rippin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:43</td>
+				<td>
+Text Canberra of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: Canberra									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:43</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:43</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:43</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:45</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateHotelsRange</p> 
+													<p class="duration text-sm">0h:0m:17s+530ms</p> 
+													<span class="datetime">23:39:45 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateHotelsRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:39:45 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:40:02 PM</span>
+															<span class='badge badge-default'>0h:0m:17s+530ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:45</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:45</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:45</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:46</td>
+				<td>
+Starting 'Create Hotel range test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:46</td>
+				<td>
+Test data for this test: hotel name - Buckridge Group, hotel description -Et illum ab sit itaque quam ex voluptas. Voluptas porro omnis expedita culpa. Eum officia eos deleniti ipsam nesciunt non maiores velit. Officia sit fugit in. Hic vel qui autem omnis qui commodi labore sequi. Ratione et labore voluptatem rem ad omnis iure quisquam., hotel stars - 3, hotel type - Residence, hotel location - Ternopol									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:46</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:47</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:50</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:52</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:53</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:53</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Dropdown element was selected by value: 3									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Dropdown element was selected by value: Residence									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Setting the text in the element by its locator: name=ffrom									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Setting the text in the element by its locator: name=fto									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:54</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:57</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:39:57</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:00</td>
+				<td>
+Text Buckridge Group of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Buckridge Group									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:00</td>
+				<td>
+Text Ternopol of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: Ternopol									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:00</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:00</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:00</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:02</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateHotelsRange</p> 
+													<p class="duration text-sm">0h:0m:18s+948ms</p> 
+													<span class="datetime">23:40:02 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateHotelsRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:40:02 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:40:21 PM</span>
+															<span class='badge badge-default'>0h:0m:18s+948ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:02</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:03</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:03</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:03</td>
+				<td>
+Starting 'Create Hotel range test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:03</td>
+				<td>
+Test data for this test: hotel name - Kulas - Larson, hotel description -Quidem eum ut ut labore odio cupiditate saepe et. Minima illum ut sit aliquid impedit soluta dolorem est aut. Earum voluptates aperiam autem qui qui ab optio. Sunt vero quia dolorum est., hotel stars - 3, hotel type - Residence, hotel location - Bristol									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:03</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:05</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:08</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:10</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:11</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:11</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Dropdown element was selected by value: 3									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Dropdown element was selected by value: Residence									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Setting the text in the element by its locator: name=ffrom									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Setting the text in the element by its locator: name=fto									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:12</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:15</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:15</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:18</td>
+				<td>
+Text Kulas - Larson of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Kulas - Larson									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:18</td>
+				<td>
+Text Bristol of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: Bristol									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:18</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:18</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:18</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:21</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateHotelsRange</p> 
+													<p class="duration text-sm">0h:0m:16s+833ms</p> 
+													<span class="datetime">23:40:21 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateHotelsRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:40:21 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:40:38 PM</span>
+															<span class='badge badge-default'>0h:0m:16s+833ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:21</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:22</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:22</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:22</td>
+				<td>
+Starting 'Create Hotel range test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:22</td>
+				<td>
+Test data for this test: hotel name - Zboncak, Rau and Hills, hotel description -Enim sunt autem error consequatur. Illum voluptas temporibus totam odit optio et. Odio nulla dolorum rem adipisci. Debitis nihil dolores qui nostrum earum ut. Quaerat id aliquam., hotel stars - 2, hotel type - Guest House, hotel location - Bristol									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:22</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:24</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:27</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:28</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:29</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:29</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:30</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:30</td>
+				<td>
+Dropdown element was selected by value: 2									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:30</td>
+				<td>
+Dropdown element was selected by value: Guest House									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:30</td>
+				<td>
+Setting the text in the element by its locator: name=ffrom									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:31</td>
+				<td>
+Setting the text in the element by its locator: name=fto									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:31</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:31</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:33</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:33</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:37</td>
+				<td>
+Text Zboncak, Rau and Hills of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Zboncak, Rau and Hills									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:37</td>
+				<td>
+Text Bristol of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: Bristol									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:37</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:37</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:37</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:38</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateHotelsRange</p> 
+													<p class="duration text-sm">0h:0m:15s+927ms</p> 
+													<span class="datetime">23:40:38 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateHotelsRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:40:38 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:40:54 PM</span>
+															<span class='badge badge-default'>0h:0m:15s+927ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:38</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:39</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:39</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:39</td>
+				<td>
+Starting 'Create Hotel range test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:39</td>
+				<td>
+Test data for this test: hotel name - Fadel, Aufderhar and Gerhold, hotel description -Et voluptas quasi at. Doloremque corrupti quos quia veritatis quis et. Reiciendis molestiae pariatur architecto. Enim molestiae rerum cumque et illo non facere. Ipsam unde eius dolorem commodi., hotel stars - 4, hotel type - Apartment, hotel location - London									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:39</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:41</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:44</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:46</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:46</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:47</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:47</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:47</td>
+				<td>
+Dropdown element was selected by value: 4									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:47</td>
+				<td>
+Dropdown element was selected by value: Apartment									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:47</td>
+				<td>
+Setting the text in the element by its locator: name=ffrom									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:48</td>
+				<td>
+Setting the text in the element by its locator: name=fto									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:48</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:48</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:50</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:50</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:54</td>
+				<td>
+Text Fadel, Aufderhar and Gerhold of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Fadel, Aufderhar and Gerhold									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:54</td>
+				<td>
+Text London of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: London									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:54</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:54</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:54</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">EditHotels</p> 
+													<p class="duration text-sm">0h:0m:18s+353ms</p> 
+													<span class="datetime">23:40:59 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">EditHotels</h5>
+															<span class='badge badge-success'>2/3/2019 11:40:59 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:41:17 PM</span>
+															<span class='badge badge-default'>0h:0m:18s+353ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:40:59</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:00</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:00</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:00</td>
+				<td>
+Starting 'Edit Hotels' test.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:00</td>
+				<td>
+Test data for this test: hotel name - Firstly Edited, hotel location - Dallas									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:00</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:03</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:06</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:09</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:09</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:09</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:11</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:11</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:16</td>
+				<td>
+Text Firstly Edited of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Firstly Edited									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:16</td>
+				<td>
+Text Dallas of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: Dallas									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:16</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:17</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">EditHotels</p> 
+													<p class="duration text-sm">0h:0m:15s+590ms</p> 
+													<span class="datetime">23:41:17 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">EditHotels</h5>
+															<span class='badge badge-success'>2/3/2019 11:41:17 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:41:33 PM</span>
+															<span class='badge badge-default'>0h:0m:15s+590ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:17</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:18</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:18</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:18</td>
+				<td>
+Starting 'Edit Hotels' test.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:18</td>
+				<td>
+Test data for this test: hotel name - Firstly Edited, hotel location - New York									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:18</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:20</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:23</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:25</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:26</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:26</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:28</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:28</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:32</td>
+				<td>
+Text Firstly Edited of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Firstly Edited									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:32</td>
+				<td>
+Text New York of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: New York									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:32</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:33</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">EditHotels</p> 
+													<p class="duration text-sm">0h:0m:15s+600ms</p> 
+													<span class="datetime">23:41:33 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">EditHotels</h5>
+															<span class='badge badge-success'>2/3/2019 11:41:33 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:41:49 PM</span>
+															<span class='badge badge-default'>0h:0m:15s+600ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:33</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:34</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:34</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:34</td>
+				<td>
+Starting 'Edit Hotels' test.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:34</td>
+				<td>
+Test data for this test: hotel name - Secondly Edited, hotel location - New York									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:34</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:36</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:39</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:41</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:41</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:41</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:44</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:44</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:48</td>
+				<td>
+Text Secondly Edited of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Secondly Edited									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:48</td>
+				<td>
+Text New York of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: New York									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:48</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">EditHotels</p> 
+													<p class="duration text-sm">0h:0m:15s+464ms</p> 
+													<span class="datetime">23:41:49 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">EditHotels</h5>
+															<span class='badge badge-success'>2/3/2019 11:41:49 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:42:04 PM</span>
+															<span class='badge badge-default'>0h:0m:15s+464ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Starting 'Edit Hotels' test.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Test data for this test: hotel name - Secondly Edited, hotel location - Dallas									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:49</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:51</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:54</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:56</td>
+				<td>
+Setting the text in the element by its locator: name=hotelname									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:57</td>
+				<td>
+Clicking on the element by its locator: xpath=//div[@id='s2id_searching']/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:57</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:59</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:41:59</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:03</td>
+				<td>
+Text Secondly Edited of the element xpath=//table/tbody/tr[1]/td[5]/a is equal to expected value: Secondly Edited									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:03</td>
+				<td>
+Text Dallas of the element xpath=//table/tbody/tr[1]/td[8] is equal to expected value: Dallas									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:03</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:04</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateRoomRange</p> 
+													<p class="duration text-sm">0h:0m:13s+844ms</p> 
+													<span class="datetime">23:42:04 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateRoomRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:42:04 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:42:18 PM</span>
+															<span class='badge badge-default'>0h:0m:13s+844ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:04</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:05</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:05</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:05</td>
+				<td>
+Starting 'Create Rooms test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:05</td>
+				<td>
+Test data for this test: room type - One-Bedroom Apartment, room description -Eius voluptatem qui velit asperiores velit consequatur aut. In dolor repudiandae ratione. Maiores quaerat molestias quibusdam optio perferendis. Omnis nihil quia earum et ut consequatur blanditiis., room price - 128, room quantity - 5, minimum stay - 3, maximum adults - 2, maximum children - 2, extra beds - 2, extra bed charges - 2									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:05</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:07</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:08</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:10</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Room Type']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:10</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:12</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:12</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:13</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:13</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:13</td>
+				<td>
+Setting the text in the element by its locator: name=basicprice									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:13</td>
+				<td>
+Setting the text in the element by its locator: name=quantity									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:13</td>
+				<td>
+Setting the text in the element by its locator: name=minstay									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:13</td>
+				<td>
+Setting the text in the element by its locator: name=adults									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:14</td>
+				<td>
+Setting the text in the element by its locator: name=children									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:14</td>
+				<td>
+Setting the text in the element by its locator: name=extrabeds									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:14</td>
+				<td>
+Setting the text in the element by its locator: name=bedcharges									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:14</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:16</td>
+				<td>
+Text One-Bedroom Apartment of the element xpath=//table/tbody/tr[1]/td[3] is equal to expected value: One-Bedroom Apartment									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:16</td>
+				<td>
+Text 5 of the element xpath=//table/tbody/tr[1]/td[5] is equal to expected value: 5									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:16</td>
+				<td>
+Text 128 of the element xpath=//table/tbody/tr[1]/td[6] is equal to expected value: 128									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:16</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[2]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:16</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:16</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:18</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateRoomRange</p> 
+													<p class="duration text-sm">0h:0m:13s+820ms</p> 
+													<span class="datetime">23:42:18 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateRoomRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:42:18 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:42:32 PM</span>
+															<span class='badge badge-default'>0h:0m:13s+820ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:18</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:18</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:19</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:19</td>
+				<td>
+Starting 'Create Rooms test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:19</td>
+				<td>
+Test data for this test: room type - Double or Twin Rooms, room description -Accusamus est velit sunt et dolores quidem quasi. Autem non sed nostrum esse laboriosam. Blanditiis iste ad totam dicta delectus ea omnis illo excepturi., room price - 866, room quantity - 3, minimum stay - 5, maximum adults - 4, maximum children - 4, extra beds - 1, extra bed charges - 56									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:19</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:21</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:22</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:24</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Room Type']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:24</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:27</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:27</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:27</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:27</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:27</td>
+				<td>
+Setting the text in the element by its locator: name=basicprice									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Setting the text in the element by its locator: name=quantity									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Setting the text in the element by its locator: name=minstay									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Setting the text in the element by its locator: name=adults									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Setting the text in the element by its locator: name=children									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Setting the text in the element by its locator: name=extrabeds									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Setting the text in the element by its locator: name=bedcharges									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:28</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:30</td>
+				<td>
+Text Double or Twin Rooms of the element xpath=//table/tbody/tr[1]/td[3] is equal to expected value: Double or Twin Rooms									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:30</td>
+				<td>
+Text 3 of the element xpath=//table/tbody/tr[1]/td[5] is equal to expected value: 3									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:30</td>
+				<td>
+Text 866 of the element xpath=//table/tbody/tr[1]/td[6] is equal to expected value: 866									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:30</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[2]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:30</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:30</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:32</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateRoomRange</p> 
+													<p class="duration text-sm">0h:0m:13s+641ms</p> 
+													<span class="datetime">23:42:32 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateRoomRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:42:32 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:42:45 PM</span>
+															<span class='badge badge-default'>0h:0m:13s+641ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:32</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:32</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:32</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:33</td>
+				<td>
+Starting 'Create Rooms test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:33</td>
+				<td>
+Test data for this test: room type - One-Bedroom Apartment, room description -Odio consectetur repellendus eaque nemo. Dolor et non deserunt mollitia eveniet nesciunt iusto ut. Optio voluptas dolorum ut voluptas est. Velit enim eius ex quas reprehenderit et. Sed qui aut iste ut. Ut neque magnam sit minus fuga laudantium repudiandae delectus., room price - 259, room quantity - 2, minimum stay - 7, maximum adults - 3, maximum children - 3, extra beds - 2, extra bed charges - 94									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:33</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:34</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:36</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:37</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Room Type']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:37</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:40</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:40</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:40</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:41</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:41</td>
+				<td>
+Setting the text in the element by its locator: name=basicprice									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:41</td>
+				<td>
+Setting the text in the element by its locator: name=quantity									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:41</td>
+				<td>
+Setting the text in the element by its locator: name=minstay									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:41</td>
+				<td>
+Setting the text in the element by its locator: name=adults									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:41</td>
+				<td>
+Setting the text in the element by its locator: name=children									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:42</td>
+				<td>
+Setting the text in the element by its locator: name=extrabeds									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:42</td>
+				<td>
+Setting the text in the element by its locator: name=bedcharges									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:42</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:44</td>
+				<td>
+Text One-Bedroom Apartment of the element xpath=//table/tbody/tr[1]/td[3] is equal to expected value: One-Bedroom Apartment									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:44</td>
+				<td>
+Text 2 of the element xpath=//table/tbody/tr[1]/td[5] is equal to expected value: 2									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:44</td>
+				<td>
+Text 259 of the element xpath=//table/tbody/tr[1]/td[6] is equal to expected value: 259									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:44</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[2]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:44</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:44</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:45</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateRoomRange</p> 
+													<p class="duration text-sm">0h:0m:13s+527ms</p> 
+													<span class="datetime">23:42:45 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateRoomRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:42:45 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:42:59 PM</span>
+															<span class='badge badge-default'>0h:0m:13s+527ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:45</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:46</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:46</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:46</td>
+				<td>
+Starting 'Create Rooms test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:46</td>
+				<td>
+Test data for this test: room type - Double or Twin Rooms, room description -Tempore quis assumenda dicta deleniti minima ut nobis sit. Enim ratione debitis cumque tempore laudantium. Consequatur porro mollitia voluptatem illo dolores corporis., room price - 963, room quantity - 1, minimum stay - 4, maximum adults - 4, maximum children - 3, extra beds - 3, extra bed charges - 147									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:46</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:48</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:50</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:51</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Room Type']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:52</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:54</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:54</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:54</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=basicprice									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=quantity									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=minstay									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=adults									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=children									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=extrabeds									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Setting the text in the element by its locator: name=bedcharges									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:55</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:57</td>
+				<td>
+Text Double or Twin Rooms of the element xpath=//table/tbody/tr[1]/td[3] is equal to expected value: Double or Twin Rooms									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:57</td>
+				<td>
+Text 1 of the element xpath=//table/tbody/tr[1]/td[5] is equal to expected value: 1									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:58</td>
+				<td>
+Text 963 of the element xpath=//table/tbody/tr[1]/td[6] is equal to expected value: 963									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:58</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[2]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:58</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:58</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:59</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateRoomRange</p> 
+													<p class="duration text-sm">0h:0m:13s+495ms</p> 
+													<span class="datetime">23:42:59 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">CreateRoomRange</h5>
+															<span class='badge badge-success'>2/3/2019 11:42:59 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:43:12 PM</span>
+															<span class='badge badge-default'>0h:0m:13s+495ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:59</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:42:59</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:00</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:00</td>
+				<td>
+Starting 'Create Rooms test...'									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:00</td>
+				<td>
+Test data for this test: room type - Delux Room, room description -Mollitia in laudantium beatae est et dolores earum magni. Expedita aut in ad eos quia voluptates. Quia voluptate est., room price - 619, room quantity - 5, minimum stay - 4, maximum adults - 1, maximum children - 2, extra beds - 3, extra bed charges - 76									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:00</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:02</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:03</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[contains(text(),'Add')]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:05</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Room Type']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:05</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:07</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:07</td>
+				<td>
+Switching to frame by its locator: xpath=//div[@id='cke_1_contents']/iframe									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: xpath=//body									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Switching to default window...									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=basicprice									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=quantity									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=minstay									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=adults									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=children									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=extrabeds									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:08</td>
+				<td>
+Setting the text in the element by its locator: name=bedcharges									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:09</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:11</td>
+				<td>
+Text Delux Room of the element xpath=//table/tbody/tr[1]/td[3] is equal to expected value: Delux Room									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:11</td>
+				<td>
+Text 5 of the element xpath=//table/tbody/tr[1]/td[5] is equal to expected value: 5									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:11</td>
+				<td>
+Text 619 of the element xpath=//table/tbody/tr[1]/td[6] is equal to expected value: 619									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:11</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[2]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:11</td>
+				<td>
+Switching to alert and accepting it.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:11</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:12</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">ReassignRoomToHotel</p> 
+													<p class="duration text-sm">0h:0m:11s+860ms</p> 
+													<span class="datetime">23:43:12 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">ReassignRoomToHotel</h5>
+															<span class='badge badge-success'>2/3/2019 11:43:12 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:43:24 PM</span>
+															<span class='badge badge-default'>0h:0m:11s+860ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:12</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:13</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:13</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:13</td>
+				<td>
+Starting 'Edit Hotels' test.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:13</td>
+				<td>
+Test data for this test: hotel name - Malmaison Manchester									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:13</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:15</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:17</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:18</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Hotel']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:18</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:21</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:21</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:23</td>
+				<td>
+Text Malmaison Manchester of the element xpath=//table/tbody/tr[1]/td[4] is equal to expected value: Malmaison Manchester									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:23</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:24</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="" device="" tag=""> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">ReassignRoomToHotel</p> 
+													<p class="duration text-sm">0h:0m:11s+513ms</p> 
+													<span class="datetime">23:43:24 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">ReassignRoomToHotel</h5>
+															<span class='badge badge-success'>2/3/2019 11:43:24 PM</span>
+															<span class='badge badge-danger'>2/3/2019 11:43:36 PM</span>
+															<span class='badge badge-default'>0h:0m:11s+513ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:24</td>
+				<td>
+Navigating to the page by the following url: https://www.phptravels.net/admin									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:25</td>
+				<td>
+Setting the text in the element by its locator: xpath=//input[not(@id='resetemail') and @name='email']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:25</td>
+				<td>
+Setting the text in the element by its locator: name=password									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:25</td>
+				<td>
+Starting 'Edit Hotels' test.									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:25</td>
+				<td>
+Test data for this test: hotel name - Alzer Hotel Istanbul									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:25</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[@href='#Hotels']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:27</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Rooms']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:28</td>
+				<td>
+Clicking on the element by its locator: xpath=//table/tbody/tr[1]/td[11]/span/a[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:30</td>
+				<td>
+Clicking on the element by its locator: xpath=//label[text()='Hotel']/following-sibling::div/div/a/span[1]									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:30</td>
+				<td>
+Setting the text in the element by its locator: xpath=//div[@id='select2-drop']/div/input									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:33</td>
+				<td>
+Pressing key by the following keycode RETURN									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:33</td>
+				<td>
+Clicking on the element by its locator: xpath=//button[text()='Submit']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:35</td>
+				<td>
+Text Alzer Hotel Istanbul of the element xpath=//table/tbody/tr[1]/td[4] is equal to expected value: Alzer Hotel Istanbul									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:35</td>
+				<td>
+Clicking on the element by its locator: xpath=//a[text()='Log Out']									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>23:43:36</td>
+				<td>
+Test passed!									</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type='text/javascript'>
+	
+</script>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/f97b667/spark/js/script.js"></script>
+
+</body>
+
+</html>

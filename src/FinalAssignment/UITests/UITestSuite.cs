@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using FinalAssignment.PageObjectLibrary;
 using FinalAssignment.Utils;
 using NUnit.Framework;
@@ -74,7 +73,7 @@ namespace FinalAssignment.Tests
         [Order(2)]
         [Timeout(80000)]        
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
-        [Description("Navigates to 'Calculations' tab, enters first and second operand, validates the result of addition")]
+        [Description("Changes data entered for a hotel and validates changes were applied.")]
         public void EditHotels([Values("Firstly Edited", "Secondly Edited")] string name, [Values("New York", "Dallas")] string location)
         {
             Reporter.SetLogs("Starting 'Edit Hotels' test.");
@@ -131,8 +130,7 @@ namespace FinalAssignment.Tests
 
             var validations = new SeleniumActions();
 
-            validations.ValidateText("xpath=//table/tbody/tr[1]/td[3]", testData[0]);
-            validations.ValidateText("xpath=//table/tbody/tr[1]/td[4]", "Rendezvous Hotels");
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[3]", testData[0]);            
             validations.ValidateText("xpath=//table/tbody/tr[1]/td[5]", testData[3]);
             validations.ValidateText("xpath=//table/tbody/tr[1]/td[6]", testData[2]);
 
