@@ -45,7 +45,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
-        public PhpTravelsDashboardPage DeleteFirst()
+        public PhpTravelsDashboardPage DeleteFirstHotel()
         {
             Click("xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i");            
             AcceptAlert();            
@@ -53,9 +53,24 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
-        public PhpTravelsDashboardPage EditFirst()
+        public PhpTravelsDashboardPage EditFirstHotel()
         {
             Click("xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i");            
+
+            return this;
+        }
+
+        public PhpTravelsDashboardPage DeleteFirstRoom()
+        {
+            Click("xpath=//table/tbody/tr[1]/td[11]/span/a[2]");
+            AcceptAlert();
+
+            return this;
+        }
+
+        public PhpTravelsDashboardPage EditFirstRoom()
+        {
+            Click("xpath=//table/tbody/tr[1]/td[11]/span/a[1]");
 
             return this;
         }

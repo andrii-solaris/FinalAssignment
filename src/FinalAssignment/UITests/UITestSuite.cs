@@ -39,10 +39,10 @@ namespace FinalAssignment.Tests
         [Timeout(80000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]       
         [Description("Creates a set of hotel records using random input data")]
-        [TestCaseSource(typeof(TestDataProvider))]
+        [TestCaseSource(typeof(HotelDataProvider))]
         public void CreateHotelsRange(string[] testData)
         {
-            Reporter.SetLogs("Starting 'ValidateUserDetails test...'");
+            Reporter.SetLogs("Starting 'Create Hotel range test...'");
             Reporter.SetLogs($"Test data for this test: hotel name - {testData[0]}, hotel description -{testData[1]}, " +
                 $"hotel stars - {testData[2]}, hotel type - {testData[3]}, hotel location - {testData[4]}");
 
@@ -62,10 +62,12 @@ namespace FinalAssignment.Tests
                 SetHotelLocation(testData[4]).                
                 ClickSubmit();
 
-            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", testData[0]);
-            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[8]", testData[4]);
+            var validations = new SeleniumActions();
 
-                dashboard.DeleteFirst();
+           validations.ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", testData[0]);
+           validations.ValidateText("xpath=//table/tbody/tr[1]/td[8]", testData[4]);
+
+                dashboard.DeleteFirstHotel();
         }
 
         [Test, Pairwise]
@@ -81,7 +83,7 @@ namespace FinalAssignment.Tests
             PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage().
                 ExpandHotelsDropdown().
                 ClickHotelsLink().
-                EditFirst();
+                EditFirstHotel();
 
             new HotelEditPage().
                 SetHotelName(name).                
@@ -89,24 +91,52 @@ namespace FinalAssignment.Tests
                 SetHotelLocation(location).
                 ClickSubmit();
 
-            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", name);
-            new SeleniumActions().ValidateText("xpath=//table/tbody/tr[1]/td[8]", location);
+            var validations = new SeleniumActions(); 
+
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[5]/a", name);
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[8]", location);
 
         }
 
         [Test]
         [Order(3)]
-        [Timeout(5000)]
+        [Timeout(80000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
+        [TestCaseSource(typeof(RoomDataProvider))]
         [Description("Navigates to 'Plans' tab, validates that the price of Basic, Plus and Premium plans displays as expected")]
-        public void CreateRooms()
+        public void CreateRoomRange(string[] testData)
         {
-            Reporter.SetLogs("Starting 'ValidatePlans test...Timeouts set to 5 seconds.'");
+            Reporter.SetLogs("Starting 'Create Rooms test...'");
+            Reporter.SetLogs($"Test data for this test: room type - {testData[0]}, room description -{testData[1]}, " +
+                $"room price - {testData[2]}, room quantity - {testData[3]}, minimum stay - {testData[4]}, maximum adults - {testData[5]}," +
+                $" maximum children - {testData[6]}, extra beds - {testData[7]}, extra bed charges - {testData[8]}");
 
             PhpTravelsDashboardPage dashboard = new PhpTravelsDashboardPage().
                 ExpandHotelsDropdown().
                 ClickRoomsLink().
                 Add();
+
+            new RoomEditPage().
+                ExpandRoomTypeDropdown().
+                SetRoomType(testData[0]).
+                SetRoomDescription(testData[1]).
+                SetRoomPrice(testData[2]).
+                SetRoomQuantity(testData[3]).
+                SetRoomMinStay(testData[4]).
+                SetRoomMaxAdults(testData[5]).
+                SetRoomMaxChildren(testData[6]).
+                SetRoomExtraBeds(testData[7]).
+                SetRoomExtraBedCharges(testData[8]).
+                ClickSubmit();
+
+            var validations = new SeleniumActions();
+
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[3]", testData[0]);
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[4]", "Rendezvous Hotels");
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[5]", testData[3]);
+            validations.ValidateText("xpath=//table/tbody/tr[1]/td[6]", testData[2]);
+
+            dashboard.DeleteFirstRoom();
 
         }
 

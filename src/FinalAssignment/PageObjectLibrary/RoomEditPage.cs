@@ -26,5 +26,71 @@ namespace FinalAssignment.PageObjectLibrary
 
             return this;
         }
+
+        public RoomEditPage SetRoomDescription(string description)
+        {
+            SwitchToFrame("xpath=//div[@id='cke_1_contents']/iframe");
+            SetText("xpath=//body", description);
+            SwitchToDefaultContent();
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomPrice(string price)
+        {
+            SetText("name=basicprice", price);
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomQuantity(string quantity)
+        {
+            SetText("name=quantity", quantity);
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomMinStay(string duration)
+        {
+            SetText("name=minstay", duration);
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomMaxAdults (string adultsQuantity)
+        {
+            SetText("name=adults", adultsQuantity);
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomMaxChildren(string childrenQuantity)
+        {
+            SetText("name=children", childrenQuantity);
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomExtraBeds(string extraBeds)
+        {
+            SetText("name=extrabeds", extraBeds);
+
+            return this;
+        }
+
+        public RoomEditPage SetRoomExtraBedCharges(string extraBedCharges)
+        {
+            SetText("name=bedcharges", extraBedCharges);
+
+            return this;
+        }
+
+        public RoomEditPage ClickSubmit()
+        {
+            Click("xpath=//button[text()='Submit']");
+
+            return this;
+        }
+
     }
 }

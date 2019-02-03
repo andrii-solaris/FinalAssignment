@@ -134,14 +134,17 @@
     <Compile Include="PageObjectLibrary\HotelEditPage.cs" />
     <Compile Include="PageObjectLibrary\PhpTravelsAdminLoginPage.cs" />
     <Compile Include="PageObjectLibrary\PhpTravelsDashboardPage.cs" />
+    <Compile Include="PageObjectLibrary\RoomEditPage.cs" />
+    <Compile Include="UITests\RoomDataProvider.cs" />
     <Compile Include="Utils\ApiController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UITests\TestDataProvider.cs" />
+    <Compile Include="UITests\HotelDataProvider.cs" />
     <Compile Include="UITests\UITestSuite.cs" />
     <Compile Include="UITests\TestSuiteUtils.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\DriverFactory.cs" />
     <Compile Include="Utils\Reporter.cs" />
+    <Compile Include="Utils\RoomDataCreator.cs" />
     <Compile Include="Utils\SeleniumActions.cs" />
     <Compile Include="Utils\HotelDataCreator.cs" />
   </ItemGroup>

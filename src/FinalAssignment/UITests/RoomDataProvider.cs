@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FinalAssignment.Utils;
 
-namespace FinalAssignment.UITests
+namespace FinalAssignment.Tests
 {
     class RoomDataProvider : IEnumerable
     {

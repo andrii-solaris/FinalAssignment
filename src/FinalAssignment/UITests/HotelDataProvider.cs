@@ -8,7 +8,7 @@ using FinalAssignment.Utils;
 
 namespace FinalAssignment.Tests
 {
-    class TestDataProvider : IEnumerable
+    class HotelDataProvider : IEnumerable
     {
         public IEnumerator GetEnumerator()
         {
