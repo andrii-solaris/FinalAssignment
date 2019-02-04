@@ -11,6 +11,7 @@ using WindowsInput;
 
 namespace FinalAssignment.Utils
 {
+    //Provides wrappers and logic for Selenium actions.
     class SeleniumActions
     {
         private IWebDriver _driver;        
@@ -22,7 +23,7 @@ namespace FinalAssignment.Utils
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
         }       
 
-
+        //Provides custom waits.
         public void WaitForElementToUpdate(string locator)
         {
 
@@ -44,12 +45,14 @@ namespace FinalAssignment.Utils
             Reporter.SetLogs($"Element by the following locator: {locator} has been found. Proceeding...");
         }
 
+        //Sets default waits for web elements.
         private void SetDefaultWaitFor(int duration)
         {
             Reporter.SetLogs($"Setting default time to wait for an element to {duration}");            
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(duration);
         }
 
+        //Decomposes a string to locator and decides on which By instance to use.
         private By ProcessLocator(string locator)
         {
 
@@ -98,18 +101,21 @@ namespace FinalAssignment.Utils
             return null;
         }
 
+        //Standard click in case the locator returns an array of web elements.
         public void Click(string locator, int index)
         {
             Reporter.SetLogs($"Clicking on the element by its locator: { locator } and index in the collection of similar elements {index}");            
             _driver.FindElements(ProcessLocator(locator)).ElementAt(index).Click();
         }
-
+        
+        //Standard click for single element.
         public void Click(string locator)
         {
             Reporter.SetLogs($"Clicking on the element by its locator: {locator}");            
             _driver.FindElement(ProcessLocator(locator)).Click();
         }
 
+        //Clears and sets text to input field.
         public IWebElement SetText(string locator, string text)
         {
             Reporter.SetLogs($"Setting the text in the element by its locator: {locator}");
@@ -120,12 +126,14 @@ namespace FinalAssignment.Utils
             return element;
         }
 
+        //Clears text from an input field.
         public void ClearText(string locator, int index)
         {
             Reporter.SetLogs($"Clearing the text in the element by its locator: {locator}");
             _driver.FindElements(ProcessLocator(locator)).ElementAt(index).Clear();
         }
 
+        //Checks if a web element is enabled.
         public bool CheckIfEnabled(string locator)
         {            
             var element = _driver.FindElement(ProcessLocator(locator));
@@ -142,6 +150,7 @@ namespace FinalAssignment.Utils
             }
         }
 
+        //Checks whether checkbox is selected, if a locator returns an array of web elements.
         public bool CheckIfSelected(string locator, int index)
         {            
             var element = _driver.FindElements(ProcessLocator(locator)).ElementAt(index);
@@ -158,6 +167,7 @@ namespace FinalAssignment.Utils
             }
         }
 
+        //Checks whether checkbox is selected.
         public bool CheckIfSelected(string locator)
         {            
             var element = _driver.FindElement(ProcessLocator(locator));
@@ -174,6 +184,7 @@ namespace FinalAssignment.Utils
             }
         }
 
+        //Gets css value of a web element.
         public void GetCssValue(string locator, string cssAttribute)
         {
             Reporter.SetLogs($"Getting CSS value from the element by its locator: {locator}");
@@ -181,6 +192,7 @@ namespace FinalAssignment.Utils
             Reporter.SetLogs($"The CSS value of the element by locator: {locator} is: {cssValue}");
         }
 
+        //Gets text of a web element, if a locator returns an array of web elements.
         public string GetText(string locator, int index)
         {            
             var text = _driver.FindElements(ProcessLocator(locator)).ElementAt(index).Text;
@@ -189,14 +201,16 @@ namespace FinalAssignment.Utils
 
         }
 
+        //Gets text of a web element.
         public string GetText(string locator)
         {            
             var text = _driver.FindElement(ProcessLocator(locator)).Text;
             Reporter.SetLogs($"Getting text from the element by its locator: {locator}. Text value is {text}");
             return text;
 
-        }        
+        }
 
+        //Gets a value of a specified web element's attribute, if a locator returns an array of web elements.
         public string GetAttribute(string locator, string attribute, int index)
         {            
             var value = _driver.FindElements(ProcessLocator(locator)).ElementAt(index).GetAttribute(attribute);
@@ -207,6 +221,7 @@ namespace FinalAssignment.Utils
 
         }
 
+        //Gets a value of a specified web element's attribute.
         public string GetAttribute(string locator, string attribute)
         {            
 
@@ -217,6 +232,8 @@ namespace FinalAssignment.Utils
 
         }        
 
+
+        //Selects an element from a dropdown by index.
         public void SelectDropdownElement(string locator, int index)
         {            
 
@@ -228,6 +245,7 @@ namespace FinalAssignment.Utils
             Reporter.SetLogs($"Dropdown element was selected by index: {index}");
         }
 
+        //Selects an element from a dropdown by value.
         public void SelectDropdownElement(string locator, string value)
         {            
 
@@ -239,6 +257,7 @@ namespace FinalAssignment.Utils
             Reporter.SetLogs($"Dropdown element was selected by value: {value}");
         }
 
+        //Selects an element from a dropdown by text.
         public void SelectDropdownElementByText(string locator, string text)
         {            
 
@@ -250,6 +269,7 @@ namespace FinalAssignment.Utils
             Reporter.SetLogs($"Dropdown element was selected by value: {text}");
         }
 
+        //Submits form if a specified element is within a form element.
         public void SubmitForm(string locator)
         {            
 
@@ -259,18 +279,21 @@ namespace FinalAssignment.Utils
             element.Submit();
         }
 
+        //Navigates back to previous page in a browser.
         public void ToPreviousPage()
         {
             Reporter.SetLogs("Navigating back to the previous page");
             _driver.Navigate().Back();
         }
 
+        //Refreshes a page in a browser.
         public void RefreshPage()
         {
             Reporter.SetLogs("Refreshing the page");
             _driver.Navigate().Refresh();
         }        
 
+        //Provides implementation for validate text assert.
         public void ValidateText(string locator, string expectedValue)
         {            
             var element = _driver.FindElement(ProcessLocator(locator)).Text;            
@@ -278,6 +301,7 @@ namespace FinalAssignment.Utils
             Reporter.SetLogs($"Text {element} of the element {locator} is equal to expected value: {expectedValue}");
         }
 
+        //Gets url of a current web page.
         public string GetCurrentUrl()
         {
             var thisUrl = _driver.Url;
@@ -285,48 +309,56 @@ namespace FinalAssignment.Utils
             return thisUrl;
         }
         
+        //Provides implementation for hover action.
         public void Hover(string locator)
         {
             Reporter.SetLogs($"Moving and hovering over the element by its locator {locator}");
             new Actions(_driver).MoveToElement(_driver.FindElement(ProcessLocator(locator))).Perform();
         }        
 
+        //Switches to window by index.
         public void SwitchToWindow(int windowIndex)
         {
             Reporter.SetLogs($"Switching to window/tab by its index: {windowIndex}");
             _driver.SwitchTo().Window(_driver.WindowHandles[windowIndex]);
         }
 
+        //Switches to default content.
         public void SwitchToDefaultContent()
         {
             Reporter.SetLogs("Switching to default window...");
             _driver.SwitchTo().DefaultContent();
         }
 
+        //Closes active window.
         public void CloseCurrentWindow()
         {
             Reporter.SetLogs("Closing current window...");
             _driver.Close();
         }
 
+        //Switches to iframe by locator.
         public void SwitchToFrame(string locator)
         {
             Reporter.SetLogs($"Switching to frame by its locator: {locator}");
             _driver.SwitchTo().Frame(_driver.FindElement(ProcessLocator(locator)));
         }
 
+        //Accepts alert.
         public void AcceptAlert()
         {
             Reporter.SetLogs($"Switching to alert and accepting it.");
             _driver.SwitchTo().Alert().Accept();
         }
 
+        //Provides implementation for drag and drop action.
         public void DragAndDrop(string draggableElement, string targetElement)
         {
             Reporter.SetLogs($"Dragging element by locator: {draggableElement} to its target element by locator: {targetElement}");
             new Actions(_driver).DragAndDrop(_driver.FindElement(ProcessLocator(draggableElement)), _driver.FindElement(ProcessLocator(targetElement))).Perform();
         }
 
+        //Simulates key press and release.
         public void PressKey(VirtualKeyCode keycode)
         {
             Reporter.SetLogs($"Pressing key by the following keycode {keycode}");
