@@ -13,6 +13,7 @@ namespace FinalAssignment.Tests
     {        
 
         [OneTimeSetUp]
+        //This method initializes and configures both Serilog and Extent Report functionalities. 
         public void RunBeforeTestSuite()
 
         {            
@@ -36,6 +37,7 @@ namespace FinalAssignment.Tests
         }
 
         [OneTimeTearDown]
+        //This method finalizes and terminates both Serilog and Extent Report functionalities. 
         public void RunAfterTestSuite()
         {
             Reporter.TerminateReporter();

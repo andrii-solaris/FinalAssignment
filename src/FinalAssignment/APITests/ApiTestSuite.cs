@@ -6,6 +6,7 @@ using Serilog;
 namespace FinalAssignment.Tests
 {
     [TestFixture]
+    [Description("This class represents test suite for API tests performed under https://jsonplaceholder.typicode.com/")]
     class ApiTestSuite : ApiController
     {
 

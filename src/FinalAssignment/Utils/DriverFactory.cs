@@ -10,6 +10,7 @@ using System.IO;
 
 namespace FinalAssignment.Utils
 {
+    //This class serves to create a specific instance of a WebDriver using specified parameters.
     static class DriverFactory
     {
         private static readonly IDictionary<string, IWebDriver> _driverDictionary = new Dictionary<string, IWebDriver>();
@@ -27,6 +28,7 @@ namespace FinalAssignment.Utils
             }
         }
 
+        //Instantiates WebDriver. Either "Chrome" or "Firefox" options are available.
         public static void InstantiateDriver(string driverType)
         {
 
@@ -46,6 +48,7 @@ namespace FinalAssignment.Utils
                         }
 
                         options.Profile = new FirefoxProfile();
+                        //Setting custom download directory for "Firefox".
                         options.Profile.SetPreference("browser.download.dir", $@"{Constants.CurrentDirectory}\Downloads");
                         options.Profile.SetPreference("browser.download.folderList", 2);
                         options.Profile.SetPreference("browser.helperApps.neverAsk.saveToDisk", "image/jpeg");
@@ -63,7 +66,7 @@ namespace FinalAssignment.Utils
                     {
 
                         var options = new ChromeOptions();
-
+                        //This part is used to run "Chrome" in a headless mode if this option was specified in App.config file or via NUnit Console.
                         if (ConfigurationManager.AppSettings["HeadlessMode"].Equals("True") ||
                             (TestContext.Parameters["HeadlessMode"] != null && TestContext.Parameters["HeadlessMode"].Equals("True")))
                         {
@@ -75,6 +78,7 @@ namespace FinalAssignment.Utils
                             options.AddArgument(option);
                         }
 
+                        //Setting custom download directory for "Chrome".
                         options.AddUserProfilePreference("download.default_directory", $@"{Constants.CurrentDirectory}\Downloads");
                         options.AddUserProfilePreference("download.prompt_for_download", false);
                         options.AddUserProfilePreference("disable-popup-blocking", "true");
@@ -89,6 +93,7 @@ namespace FinalAssignment.Utils
             Log.Information($"Initializing {driverType} driver...");
         }
 
+        //Used to take screenshots on test fails.
         public static string TakeScreenshot()
         {
             Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
@@ -105,6 +110,7 @@ namespace FinalAssignment.Utils
             return screenshotPath;
         }
 
+        //Navigates to the specified URL.
         public static void GoToPage(string pageUrl)
         {
             Reporter.SetLogs($"Navigating to the page by the following url: {pageUrl}");
@@ -112,7 +118,7 @@ namespace FinalAssignment.Utils
             _driver.Navigate().GoToUrl(pageUrl);
         }
 
-
+        //Closing WebDriver instance.
         public static void CloseAllDrivers()
         {
             foreach (var key in _driverDictionary.Keys)

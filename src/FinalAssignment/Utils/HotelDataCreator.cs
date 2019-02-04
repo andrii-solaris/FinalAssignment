@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalAssignment.Utils
 {
+    //This class creates random data for hotel-keyword UI tests.
     class HotelDataCreator
     {   
         

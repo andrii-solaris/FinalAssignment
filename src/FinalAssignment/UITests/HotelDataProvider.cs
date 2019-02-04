@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
+﻿using System.Collections;
 using FinalAssignment.Utils;
 
 namespace FinalAssignment.Tests
 {
+    //This class serves as a data provider for hotel-keyword UI tests. It is set up with randomly generated test data. 
     class HotelDataProvider : IEnumerable
     {
         public IEnumerator GetEnumerator()

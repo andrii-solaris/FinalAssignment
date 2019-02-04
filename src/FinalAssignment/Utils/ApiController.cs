@@ -6,6 +6,7 @@ using FluentAssertions;
 
 namespace FinalAssignment.Utils
 {
+    //This class serves as a controller for API tests. Contains a set of methods, that serve as a wrappers for HTTP methods.
     class ApiController
     {
         private string BaseUrl;
@@ -13,6 +14,7 @@ namespace FinalAssignment.Utils
         private RestRequest Request;
         private IRestResponse Response;       
         
+        //Sets base URL for testing, creates RestSharp instance.
         public void Initialize(string baseUrl)
         {
             BaseUrl = baseUrl;
@@ -25,7 +27,8 @@ namespace FinalAssignment.Utils
                 Timeout = System.Convert.ToInt32(System.TimeSpan.FromMinutes(3).TotalMilliseconds)
             };
         }
-
+        
+        //Makes and processes HTTP GET request with parameters.
         public JObject GetRequest(string parameter)
         {
             Request = new RestRequest(parameter, Method.GET);
@@ -37,6 +40,7 @@ namespace FinalAssignment.Utils
             return JObject.Parse(Response.Content);
         }
 
+        //Makes and processes HTTP POST request with body and parameters.
         public JObject PostRequest(string parameter, object body)
         {
             Request = new RestRequest(parameter, Method.POST);
@@ -50,6 +54,7 @@ namespace FinalAssignment.Utils
             return JObject.Parse(Response.Content);
         }
 
+        //Makes and processes HTTP PATCH request with body and parameters.
         public JObject PatchRequest(string parameter, object body)
         {
             Request = new RestRequest(parameter, Method.PATCH);
@@ -63,6 +68,7 @@ namespace FinalAssignment.Utils
             return JObject.Parse(Response.Content);
         }
 
+        //Serves to compare and validate expected result against actual in a specified part of the response body.
         public void ValidateAPIResponse(JObject response, string token, string expectedValue)
         {
             Reporter.SetLogs($"Validating the following element of the response: {token}");

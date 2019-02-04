@@ -1,15 +1,11 @@
 ﻿using FinalAssignment.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 
 namespace FinalAssignment.PageObjectLibrary
 {
+    //This class represents dashboard page and its functionality for PhpTravels.com
     class PhpTravelsDashboardPage : SeleniumActions
     {
+        //Click "Hotels" dropdown's icon to expand it.
         public PhpTravelsDashboardPage ExpandHotelsDropdown()
         {            
             Click("xpath=//a[@href='#Hotels']");            
@@ -17,6 +13,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "Hotels" link to navigate to the corresponding section.
         public PhpTravelsDashboardPage ClickHotelsLink()
         {
             Click("xpath=//a[text()='Hotels']");
@@ -24,6 +21,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "Rooms" link to navigate to the corresponding section.
         public PhpTravelsDashboardPage ClickRoomsLink()
         {
             Click("xpath=//a[text()='Rooms']");
@@ -31,6 +29,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "Log out" to terminate session fro signed in user.
         public PhpTravelsDashboardPage LogOut()
         {
             Click("xpath=//a[text()='Log Out']");
@@ -38,6 +37,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "Add" to add new item.
         public PhpTravelsDashboardPage Add()
         {
             Click("xpath=//button[contains(text(),'Add')]");
@@ -45,6 +45,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "delete" icon in the first row of the table to delete current hotel record.
         public PhpTravelsDashboardPage DeleteFirstHotel()
         {
             Click("xpath=//table/tbody/tr[1]/td[12]/span/a[3]/i");            
@@ -53,6 +54,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "edit" icon in the first row of the table to edit current hotel record.
         public PhpTravelsDashboardPage EditFirstHotel()
         {
             Click("xpath=//table/tbody/tr[1]/td[12]/span/a[2]/i");            
@@ -60,6 +62,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "delete" icon in the first row of the table to delete current room record.
         public PhpTravelsDashboardPage DeleteFirstRoom()
         {
             Click("xpath=//table/tbody/tr[1]/td[11]/span/a[2]");
@@ -68,6 +71,7 @@ namespace FinalAssignment.PageObjectLibrary
             return this;
         }
 
+        //Click "edit" icon in the first row of the table to edit current room record.
         public PhpTravelsDashboardPage EditFirstRoom()
         {
             Click("xpath=//table/tbody/tr[1]/td[11]/span/a[1]");

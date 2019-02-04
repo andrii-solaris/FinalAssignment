@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 using FinalAssignment.Utils;
 using Serilog;
-using System.Threading;
 
 namespace FinalAssignment.PageObjectLibrary
 {
     class PhpTravelsAdminLoginPage : SeleniumActions
     {
+        //Populate sign in form with valid username and email and submit.
         public void SubmitSignInForm()
         {            
             Log.Information("Logging into PHP Travels as demo admin...");

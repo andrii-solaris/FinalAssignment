@@ -9,6 +9,7 @@ namespace FinalAssignment.Tests
 {
     [TestFixture]
     [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
+    [Description("This class represents test suite for UI tests performed under https://www.phptravels.net")]
     class UITestSuite 
     {       
 

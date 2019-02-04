@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace FinalAssignment.Utils
 {
+    //This class creates random data for room-keyword UI tests.
     class RoomDataCreator
     {
 
