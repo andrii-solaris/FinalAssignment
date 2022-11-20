@@ -35,6 +35,7 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
+        [Ignore("Ignore a test")]
         [Order(1)] 
         [Timeout(80000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]       
@@ -71,6 +72,7 @@ namespace FinalAssignment.Tests
         }
 
         [Test, Pairwise]
+        [Ignore("Ignore a test")]
         [Order(2)]
         [Timeout(80000)]        
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
@@ -99,6 +101,7 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
+        [Ignore("Ignore a test")]
         [Order(3)]
         [Timeout(80000)]
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
@@ -140,6 +143,7 @@ namespace FinalAssignment.Tests
         }
 
         [Test]
+        [Ignore("Ignore a test")]
         [Order(4)]
         [Timeout(80000)]       
         [Author("Andrii Stepaniuk", "andrii.stepaniuk@fortegrp.net")]
